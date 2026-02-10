@@ -1946,3 +1946,1152 @@ html {
         scroll-behavior: auto !important;
     }
 }
+
+/* ============================================
+   PRICING - SISTEM KOIN (TAMBAHAN)
+   Paste kode ini ke BAGIAN PALING BAWAH style.css Anda
+   ============================================ */
+
+/* ========================================
+   MEMBERSHIP SECTION
+   ======================================== */
+
+.membership-section {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.section-subtitle-2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    margin-bottom: 2.5rem;
+}
+
+/* Toggle Bulanan/Tahunan */
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.toggle-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-gray-500);
+    transition: color 0.3s;
+}
+
+.toggle-label.active {
+    color: var(--color-primary);
+}
+
+.save-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* Membership Card */
+/* ========================================
+   MEMBERSHIP SECTION
+   ======================================== */
+
+.membership-section {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.section-subtitle-2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    margin-bottom: 2.5rem;
+}
+
+/* Toggle Bulanan/Tahunan */
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.toggle-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-gray-500);
+    transition: color 0.3s;
+}
+
+.toggle-label.active {
+    color: var(--color-primary);
+}
+
+.save-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* ========================================
+   MEMBERSHIP CARD - LAYOUT VERTIKAL CENTERED
+   ======================================== */
+
+.membership-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.membership-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-purple));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.membership-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 70px rgba(249, 115, 22, 0.15);
+}
+
+.membership-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+}
+
+.membership-content {
+    width: 100%;
+}
+
+.membership-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.membership-subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+}
+
+.membership-price {
+    margin-bottom: 2rem;
+}
+
+.price-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.membership-price .currency {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+}
+
+.membership-price .amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.membership-price .period {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+}
+
+.price-note {
+    font-size: 0.8125rem;
+    color: var(--color-gray-400);
+}
+
+.membership-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+}
+
+.membership-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--color-gray-700);
+    font-weight: 500;
+}
+
+.membership-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.membership-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
+}
+/* ========================================
+   COINS SECTION
+   ======================================== */
+
+.coins-section {
+    margin-bottom: 4rem;
+}
+
+.coins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Coin Card */
+.coin-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid var(--color-gray-100);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.coin-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Popular Card */
+.coin-card.popular {
+    border-color: var(--color-primary);
+    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 40%);
+    transform: scale(1.05);
+}
+
+.coin-card.popular:hover {
+    transform: scale(1.05) translateY(-4px);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.375rem 1rem;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/* Custom Card */
+.coin-card.custom {
+    border-color: var(--color-purple);
+    background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 40%);
+}
+
+.coin-card.custom .coin-icon svg {
+    stroke: var(--color-purple);
+}
+
+.coin-badge {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.375rem 0.875rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.coin-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.coin-amount {
+    margin-bottom: 1.5rem;
+}
+
+.coin-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.coin-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.coin-price {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.price-amount {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.price-per-coin {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0.5rem;
+}
+
+.save-tag {
+    display: inline-block;
+    background: #22c55e;
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.25rem 0.625rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+}
+
+.coin-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.coin-features li {
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-50);
+}
+
+.coin-features li:last-child {
+    border-bottom: none;
+}
+
+/* Coin Buttons */
+.coin-btn {
+    width: 100%;
+    padding: 0.875rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.coin-btn {
+    background: var(--color-gray-100);
+    color: var(--color-gray-700);
+}
+
+.coin-btn:hover {
+    background: var(--color-gray-200);
+    transform: translateY(-2px);
+}
+
+.coin-btn.primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.coin-btn.primary:hover {
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.4);
+}
+
+.coin-btn.outline {
+    background: transparent;
+    border: 2px solid var(--color-purple);
+    color: var(--color-purple);
+}
+
+.coin-btn.outline:hover {
+    background: var(--color-purple);
+    color: white;
+}
+
+/* ========================================
+   PRICING INFO
+   ======================================== */
+
+/* ✅ KODE BARU YANG RAPI */
+
+/* ========================================
+   PRICING INFO - CARA KERJA KOIN
+   ======================================== */
+
+.pricing-info {
+    display: grid;
+    grid-template-columns: 1fr;              /* ✅ Mobile-first: 1 kolom */
+    gap: 1.5rem;                             /* ✅ Gap lebih kecil di mobile */
+    margin-bottom: 4rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-gray-100);
+    text-align: center;
+    transition: all 0.3s ease;               /* ✅ Smooth transition */
+    display: flex;                           /* ✅ Flexbox untuk alignment */
+    flex-direction: column;                  /* ✅ Vertikal */
+    align-items: center;                     /* ✅ Center semua elemen */
+}
+
+.info-card:hover {
+    border-color: var(--color-primary);      /* ✅ Border orange saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);             /* ✅ Naik sedikit */
+}
+
+/* Icon dalam card */
+.info-icon {
+    font-size: 3.5rem;                       /* ✅ Ukuran lebih proporsional */
+    line-height: 1;                          /* ✅ Hapus space ekstra */
+    margin-bottom: 1.25rem;                  /* ✅ Spacing konsisten */
+    display: block;
+}
+
+/* Title dalam card */
+.info-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;                        /* ✅ Line-height lebih baik */
+}
+
+/* Description dalam card */
+.info-card p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;                        /* ✅ Spacing antar baris */
+    margin: 0;                               /* ✅ Hapus margin default */
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (min-width: 640px) {
+    .pricing-info {
+        grid-template-columns: repeat(2, 1fr);   /* ✅ 2 kolom di tablet */
+        gap: 2rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .pricing-info {
+        grid-template-columns: repeat(3, 1fr);   /* ✅ 3 kolom di desktop */
+        gap: 2rem;
+    }
+    
+    .info-card {
+        padding: 2.5rem 2rem;                    /* ✅ Padding lebih besar */
+    }
+    
+    .info-icon {
+        font-size: 4rem;                         /* ✅ Icon lebih besar */
+        margin-bottom: 1.5rem;
+    }
+    
+    .info-card h4 {
+        font-size: 1.25rem;                      /* ✅ Title lebih besar */
+        margin-bottom: 1rem;
+    }
+    
+    .info-card p {
+        font-size: 1rem;                         /* ✅ Text lebih besar */
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE KECIL
+   ======================================== */
+
+@media (max-width: 480px) {
+    .info-card {
+        padding: 1.75rem 1.5rem;                 /* ✅ Padding lebih kecil */
+    }
+    
+    .info-icon {
+        font-size: 3rem;                         /* ✅ Icon lebih kecil */
+        margin-bottom: 1rem;
+    }
+    
+    .info-card h4 {
+        font-size: 1rem;
+    }
+    
+    .info-card p {
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   FAQ KOIN
+   ======================================== */
+
+/* ========================================
+   FAQ KOIN
+   ======================================== */
+
+.coin-faq {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.coin-faq h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 2rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.faq-coin-item {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-100);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.faq-coin-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.faq-coin-item h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.faq-coin-item p {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive FAQ */
+@media (min-width: 640px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .faq-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .membership-card {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+    
+    .membership-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .membership-title {
+        font-size: 1.25rem;
+    }
+    
+    .membership-price .amount {
+        font-size: 2rem;
+    }
+    
+    .membership-features {
+        gap: 0.75rem;
+    }
+    
+    .membership-features li {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .membership-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .membership-icon {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .membership-title {
+        font-size: 1.125rem;
+    }
+    
+    .membership-price .amount {
+        font-size: 1.75rem;
+    }
+    
+    .membership-price .currency {
+        font-size: 1rem;
+    }
+    
+    .membership-price .period {
+        font-size: 0.875rem;
+    }
+}
+    
+    .coins-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coin-card.popular {
+        transform: scale(1);
+    }
+    
+    .coin-card.popular:hover {
+        transform: translateY(-4px);
+    }
+    
+    .pricing-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .coins-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================
+   COIN CARD CUSTOM - INPUT BEBAS
+   Sistem: 1 Koin = Rp 500
+   ============================================ */
+
+/* Input jumlah koin */
+.custom-coin-input-wrap {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.custom-coin-input-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-gray-500);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.custom-coin-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #f5f3ff;
+    border: 1.5px solid #c4b5fd;
+    border-radius: 10px;
+    padding: 4px 12px 4px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.custom-coin-input-row:focus-within {
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.custom-coin-input-row input[type="number"] {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-purple);
+    outline: none;
+    padding: 0;
+    min-width: 0;
+    -moz-appearance: textfield;
+}
+
+.custom-coin-input-row input[type="number"]::-webkit-outer-spin-button,
+.custom-coin-input-row input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-coin-input-row input[type="number"]::placeholder {
+    color: #c4b5fd;
+}
+
+.custom-coin-input-suffix {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a78bfa;
+    flex-shrink: 0;
+}
+
+/* Stepper buttons (+10, +20, dll) */
+.custom-coin-stepper {
+    display: flex;
+    gap: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.custom-coin-stepper-btn {
+    flex: 1;
+    padding: 0.375rem 0;
+    border: 1.5px solid #c4b5fd;
+    background: #f5f3ff;
+    color: var(--color-purple);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.custom-coin-stepper-btn:hover {
+    background: var(--color-purple);
+    color: white;
+    border-color: var(--color-purple);
+}
+
+/* Live price display */
+.custom-coin-live-price {
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    border-radius: 10px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1rem;
+    min-height: 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.custom-coin-live-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.custom-coin-live-amount {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: var(--color-purple);
+    transition: transform 0.2s ease;
+    line-height: 1.2;
+}
+
+.custom-coin-live-amount.empty {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #c4b5fd;
+}
+
+.custom-coin-live-note {
+    font-size: 0.75rem;
+    color: var(--color-gray-400);
+}
+
+/* Tombol beli custom */
+.coin-btn.custom-buy-btn {
+    background: var(--color-purple);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
+.coin-btn.custom-buy-btn:hover:not(:disabled) {
+    background: #6d28d9;
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+}
+
+.coin-btn.custom-buy-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Hover icon pada card custom */
+.coin-card.custom .coin-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+}
+
+.coin-card.custom:hover {
+    border-color: var(--color-purple);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.12);
+}
+
+.coin-card.custom .coin-badge {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--color-purple);
+}
+
+/* ============================================
+   TAMBAHKAN KE BAGIAN PALING BAWAH style.css
+   Layout membership + custom coin berdampingan
+   ============================================ */
+
+/* ── Wrapper baris atas ─────────────────────── */
+.pricing-top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+/* ── Sub-header tiap kolom ──────────────────── */
+.custom-coin-section {
+    text-align: center;
+}
+
+.custom-coin-section .section-subtitle-2,
+.membership-section .section-subtitle-2 {
+    font-size: 1.375rem;
+}
+
+/* ── Membership card: tidak pakai max-width lagi ─ */
+.pricing-top-row .membership-card {
+    max-width: 100%;
+    /* Reset grid 2 kolom dalam card agar kolom tidak terlalu sempit */
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.75rem;
+}
+
+/* Fitur 1 kolom agar muat */
+.pricing-top-row .membership-features {
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+}
+
+/* ── Coin card: isi penuh kolom ──────────────── */
+.pricing-top-row .coin-card.custom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-top-row .custom-coin-live-price {
+    flex: 1;
+}
+
+/* ── Preset pilihan cepat ────────────────────── */
+.coin-quick-presets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.coin-preset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    border: 1.5px solid #c4b5fd;
+    background: #f5f3ff;
+    color: #6d28d9;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    width: 100%;
+}
+
+.coin-preset-btn span {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #8b5cf6;
+}
+
+.coin-preset-btn:hover,
+.coin-preset-btn.active {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+    color: white;
+}
+
+.coin-preset-btn:hover span,
+.coin-preset-btn.active span {
+    color: rgba(255,255,255,0.85);
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+
+/* Tablet — tumpuk ke atas-bawah */
+@media (max-width: 1023px) {
+    .pricing-top-row {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .pricing-top-row .membership-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .pricing-top-row .membership-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile kecil */
+@media (max-width: 640px) {
+    .pricing-top-row .membership-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .pricing-top-row .membership-card .membership-icon {
+        margin: 0 auto;
+    }
+
+    .pricing-top-row .membership-features {
+        grid-template-columns: 1fr;
+    }
+}
