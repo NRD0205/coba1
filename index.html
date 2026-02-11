@@ -175,49 +175,60 @@
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; }
         }
-        
-        /* DEBUG - Indicator */
-        
-        
-        
     </style>
 </head>
 
+<body>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
-                        <line x1="4" y1="6" x2="20" y2="6"></line>
-                        <line x1="4" y1="12" x2="20" y2="12"></line>
-                        <line x1="4" y1="18" x2="20" y2="18"></line>
-                    </svg>
-                </div>
-                <span>OnMenu</span>
-            </a>
 
+            <!-- Logo -->
+             
+            <a href="logo.jpg.png" class="logo">
+                <div class="logo-icon">
+                        <img src="logo.jpg.png" alt="OnMenu Logo" width="22" height="22">
+                </div>
+                        <span>OnMenu</span>
+            </a>
+            <!-- Nav Menu (Desktop: horizontal pill | Mobile: fullscreen overlay) -->
             <ul class="nav-menu">
                 <li><a href="#beranda" class="nav-link active">Beranda</a></li>
                 <li><a href="#tentang" class="nav-link">Tentang</a></li>
                 <li><a href="#paket" class="nav-link">Paket</a></li>
                 <li><a href="#kontak" class="nav-link">Kontak</a></li>
+
+                <!-- ✅ TAMBAHAN: Tombol Login & Sign Up khusus mobile -->
+                <!-- Hanya tampil di dalam overlay mobile, tersembunyi di desktop via CSS -->
+                <div class="mobile-auth">
+                    <a href="#" class="btn-login-mobile">Login</a>
+                    <a href="#" class="btn-signup-mobile">Mulai Gratis →</a>
+                </div>
             </ul>
 
+            <!-- Auth Buttons Desktop -->
             <div class="nav-auth">
                 <a href="#" class="btn-login">Login</a>
                 <a href="#" class="btn-signup">Sign Up</a>
             </div>
 
-            <button class="hamburger" id="hamburger">
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
         </div>
     </nav>
 
 
-    <!-- HERO SECTION DENGAN ANIMASI LENGKAP -->
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
     <section id="beranda" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
@@ -227,8 +238,8 @@
                 </div>
 
                 <h1 class="hero-title">
-                    KELOLA MENU ONLINE DENGAN
-                    <span class="text-orange">MUDAH & CEPAT</span>
+                    Solusi pemesanan menu makanan & minuman via
+                    <span class="text-orange">whatsapp</span>
                 </h1>
 
                 <p class="hero-subtitle">
@@ -274,48 +285,50 @@
             <!-- MOCKUP DENGAN SEMUA ANIMASI -->
             <div class="hero-visual">
                 <div class="mockup-container">
-                    <!-- MOCKUP BROWSER - Bergerak Pelan -->
-                    <div class="mockup-browser">
+                    <!-- MOCKUP BROWSER -->
+                <div class="mockup-browser">
                         <div class="mockup-header">
-                            <div class="mockup-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="live-badge">
-                                <span class="live-dot"></span>
-                                Live Menu
-                            </div>
-                        </div>
-                        <div class="mockup-content">
-                            <!-- MENU 1 - Gerak Cepat -->
-                            <div class="menu-item">
-                                <div class="menu-image"></div>
-                                <div class="menu-info">
-                                    <h4>Nasi Goreng Special</h4>
-                                    <p class="menu-price">Rp 25.000</p>
-                                    <div class="menu-rating">
-                                        <span class="stars">★★★★★</span>
-                                        <span class="review-count">(120)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- MENU 2 - Gerak Sedang -->
-                            <div class="menu-item">
-                                <div class="menu-image menu-image-2"></div>
-                                <div class="menu-info">
-                                    <h4>Mie Goreng Seafood</h4>
-                                    <p class="menu-price">Rp 30.000</p>
-                                    <div class="menu-rating">
-                                        <span class="stars">★★★★★</span>
-                                        <span class="review-count">(95)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="mockup-dots">
+                         <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+                    <div class="live-badge">
+                         <span class="live-dot"></span>
+                                 Live Menu
                     </div>
+                    </div>
+            <div class="mockup-content">
+                 <div class="menu-item">
+                         <div class="menu-image">
+                                <img src="download.jpg" alt="Nasi Goreng Special">
+                        </div>
+                    <div class="menu-info">
+                             <h4>Nasi Goreng Special</h4>
+                             <p class="menu-price">Rp 25.000</p>
+                        <div class="menu-rating">
+                            <span class="stars">★★★★★</span>
+                         <span class="review-count">(120)</span>
+                    </div>
+                </div>
+             </div>
+        <div class="menu-item">
+                <div class="menu-image menu-image-2">
+                        <img src="images.jpg" alt="Mie Goreng Seafood">
+                     </div>
+                      <div class="menu-info">
+                             <h4>Mie Goreng Seafood</h4>
+                            <p class="menu-price">Rp 30.000</p>
+                    <div class="menu-rating">
+                            <span class="stars">★★★★★</span>
+                             <span class="review-count">(95)</span>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
 
-                    <!-- FLOATING CARD 1 - KIRI (Rotasi) -->
+                    <!-- FLOATING CARD 1 - KIRI -->
                     <div class="floating-card card-stats">
                         <div class="card-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5">
@@ -343,12 +356,12 @@
         </div>
     </section>
 
+
     <!-- ============================================
          SECTION TENTANG / FITUR
          ============================================ -->
     <section id="tentang" class="features">
         <div class="container">
-            <!-- Header Section -->
             <div class="section-header">
                 <span class="section-tag">MENGAPA ONMENU</span>
                 <h2 class="section-title">Solusi Menu Digital<br>untuk Bisnis Modern</h2>
@@ -358,9 +371,7 @@
                 </p>
             </div>
 
-            <!-- Grid 3 Kartu Fitur -->
             <div class="features-grid">
-                <!-- Fitur 1: Hemat Biaya Cetak -->
                 <div class="feature-card">
                     <div class="feature-icon icon-orange">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -375,27 +386,20 @@
                     </p>
                     <ul class="feature-list">
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Tanpa biaya cetak berulang
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Update tanpa batas
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Ramah lingkungan
                         </li>
                     </ul>
                 </div>
 
-                <!-- Fitur 2: Update Instan -->
                 <div class="feature-card">
                     <div class="feature-icon icon-blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -412,28 +416,20 @@
                     </p>
                     <ul class="feature-list">
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Real-time update
                         </li>
-                        
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Kelola dari mana saja
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Sinkronisasi otomatis
                         </li>
                     </ul>
                 </div>
 
-                <!-- Fitur 3: Tampilan Menarik -->
                 <div class="feature-card">
                     <div class="feature-icon icon-purple">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -447,21 +443,15 @@
                     </p>
                     <ul class="feature-list">
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Foto menu HD
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Desain profesional
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             Mobile-friendly
                         </li>
                     </ul>
@@ -470,253 +460,172 @@
         </div>
     </section>
 
-   <!-- ============================================
-     SECTION PAKET / PRICING - SISTEM KOIN
-     ============================================ -->
-<section id="paket" class="pricing">
-    <div class="container">
-        <!-- Header Section -->
-        <div class="section-header">
-            <span class="section-tag">PILIHAN PAKET</span>
-            <h2 class="section-title">Pilih Paket yang Sesuai<br>untuk Bisnis Anda</h2>
-            <p class="section-subtitle">
-                Satu membership untuk semua fitur, tambah koin untuk transaksi lebih banyak.
-            </p>
-        </div>
 
-        <!-- ============================================
-             BARIS ATAS: MEMBERSHIP + CUSTOM KOIN BERDAMPINGAN
-             ============================================ -->
-        <div class="pricing-top-row">
+    <!-- ============================================
+         SECTION PAKET / PRICING - SISTEM KOIN
+         ============================================ -->
+    <section id="paket" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PILIHAN PAKET</span>
+                <h2 class="section-title">Pilih Paket yang Sesuai<br>untuk Bisnis Anda</h2>
+                <p class="section-subtitle">
+                    Satu membership untuk semua fitur, tambah koin untuk transaksi lebih banyak.
+                </p>
+            </div>
 
-            <!-- ==== MEMBERSHIP CARD ==== -->
-            <div class="membership-section">
-                <h3 class="section-subtitle-2">Membership Premium</h3>
-                <p class="section-desc">Akses semua fitur OnMenu dengan satu membership</p>
+            <!-- BARIS ATAS: MEMBERSHIP + CUSTOM KOIN BERDAMPINGAN -->
+            <div class="pricing-top-row">
 
-                <!-- Toggle Bulanan/Tahunan -->
-                <div class="pricing-toggle">
-                    <span class="toggle-label" id="monthlyLabel">Bulanan</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="pricingToggle">
-                        <span class="toggle-slider"></span>
-                    </label>
-                    <span class="toggle-label active" id="yearlyLabel">
-                        Tahunan
-                        <span class="save-badge">Hemat 20%</span>
-                    </span>
-                </div>
+                <!-- MEMBERSHIP CARD -->
+                <div class="membership-section">
+                    <h3 class="section-subtitle-2">Membership Premium</h3>
+                    <p class="section-desc">Akses semua fitur OnMenu dengan satu membership</p>
 
-                <!-- Membership Card -->
-                <div class="membership-card">
-                    <div class="membership-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+                    <div class="pricing-toggle">
+                        <span class="toggle-label" id="monthlyLabel">Bulanan</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="pricingToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label active" id="yearlyLabel">
+                            Tahunan
+                            <span class="save-badge">Hemat 20%</span>
+                        </span>
                     </div>
 
-                    <div class="membership-content">
-                        <h4 class="membership-title">OnMenu Premium</h4>
-                        <p class="membership-subtitle">Akses penuh ke semua fitur platform</p>
-
-                        <div class="membership-price">
-                            <div class="price-wrapper">
-                                <span class="currency">Rp</span>
-                                <span class="amount" id="membershipPrice">960.000</span>
-                                <span class="period" id="membershipPeriod">/tahun</span>
-                            </div>
-                            <p class="price-note" id="priceNote">Setara Rp 80.000/bulan</p>
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                         </div>
 
-                        <ul class="membership-features">
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Menu unlimited
-                            </li>
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Kategori unlimited
-                            </li>
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Custom domain & QR code
-                            </li>
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Analitik lengkap
-                            </li>
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                WhatsApp & Instagram integration
-                            </li>
-                            <li>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                Priority support 24/7
-                            </li>
-                        </ul>
+                        <div class="membership-content">
+                            <h4 class="membership-title">OnMenu Premium</h4>
+                            <p class="membership-subtitle">Akses penuh ke semua fitur platform</p>
 
-                        <button class="membership-btn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            <div class="membership-price">
+                                <div class="price-wrapper">
+                                    <span class="currency">Rp</span>
+                                    <span class="amount" id="membershipPrice">960.000</span>
+                                    <span class="period" id="membershipPeriod">/tahun</span>
+                                </div>
+                                <p class="price-note" id="priceNote">Setara Rp 80.000/bulan</p>
+                            </div>
+
+                            <ul class="membership-features">
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Menu unlimited
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Kategori unlimited
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Custom domain & QR code
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Analitik lengkap
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    WhatsApp & Instagram integration
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Priority support 24/7
+                                </li>
+                            </ul>
+
+                            <button class="membership-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                                Mulai Membership
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MEMBERSHIP CARD -->
+
+                <!-- CUSTOM COIN CARD -->
+                <div class="custom-coin-section">
+                    <h3 class="section-subtitle-2">Paket Koin Custom</h3>
+                    <p class="section-desc">Beli koin sesuai kebutuhan. <strong>1 Koin = Rp 500</strong></p>
+
+                    <div class="coin-card custom" style="margin-top: 0;">
+                        <div class="coin-badge">CUSTOM</div>
+
+                        <div class="coin-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                             </svg>
-                            Mulai Membership
+                        </div>
+
+                        <div class="coin-quick-presets">
+                            <button class="coin-preset-btn" onclick="setCustomCoins(50)">50 koin<span>Rp 25.000</span></button>
+                            <button class="coin-preset-btn" onclick="setCustomCoins(150)">150 koin<span>Rp 75.000</span></button>
+                            <button class="coin-preset-btn" onclick="setCustomCoins(500)">500 koin<span>Rp 250.000</span></button>
+                        </div>
+
+                        <div class="custom-coin-input-wrap">
+                            <span class="custom-coin-input-label">Atau masukkan jumlah sendiri</span>
+                            <div class="custom-coin-input-row">
+                                <input
+                                    type="number"
+                                    id="customCoinInput"
+                                    min="1"
+                                    placeholder="66"
+                                    oninput="updateCustomCoinPrice()"
+                                />
+                                <span class="custom-coin-input-suffix">Koin</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-coin-stepper">
+                            <button class="custom-coin-stepper-btn" onclick="addCustomCoins(10)">+10</button>
+                            <button class="custom-coin-stepper-btn" onclick="addCustomCoins(20)">+20</button>
+                            <button class="custom-coin-stepper-btn" onclick="addCustomCoins(50)">+50</button>
+                            <button class="custom-coin-stepper-btn" onclick="addCustomCoins(100)">+100</button>
+                        </div>
+
+                        <div class="custom-coin-live-price">
+                            <span class="custom-coin-live-label">Total Harga</span>
+                            <span class="custom-coin-live-amount empty" id="customLivePrice">Masukkan jumlah koin</span>
+                            <span class="custom-coin-live-note" id="customLivePriceNote"></span>
+                        </div>
+
+                        <button class="coin-btn custom-buy-btn" id="customCoinBuyBtn" disabled>
+                            Beli Koin Custom
                         </button>
                     </div>
                 </div>
+                <!-- END CUSTOM COIN CARD -->
+
             </div>
-            <!-- ==== END MEMBERSHIP CARD ==== -->
-
-            <!-- ==== CUSTOM COIN CARD ==== -->
-            <div class="custom-coin-section">
-                <h3 class="section-subtitle-2">Paket Koin Custom</h3>
-                <p class="section-desc">Beli koin sesuai kebutuhan. <strong>1 Koin = Rp 500</strong></p>
-
-                <div class="coin-card custom" style="margin-top: 0;">
-                    <div class="coin-badge">CUSTOM</div>
-
-                    <div class="coin-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                        </svg>
-                    </div>
-
-                    <!-- Contoh paket cepat -->
-                    <div class="coin-quick-presets">
-                        <button class="coin-preset-btn" onclick="setCustomCoins(50)">50 koin<span>Rp 25.000</span></button>
-                        <button class="coin-preset-btn" onclick="setCustomCoins(150)">150 koin<span>Rp 75.000</span></button>
-                        <button class="coin-preset-btn" onclick="setCustomCoins(500)">500 koin<span>Rp 250.000</span></button>
-                    </div>
-
-                    <!-- Input jumlah koin bebas -->
-                    <div class="custom-coin-input-wrap">
-                        <span class="custom-coin-input-label">Atau masukkan jumlah sendiri</span>
-                        <div class="custom-coin-input-row">
-                            <input
-                                type="number"
-                                id="customCoinInput"
-                                min="1"
-                                placeholder="66"
-                                oninput="updateCustomCoinPrice()"
-                            />
-                            <span class="custom-coin-input-suffix">Koin</span>
-                        </div>
-                    </div>
-
-                    <!-- Quick add stepper -->
-                    <div class="custom-coin-stepper">
-                        <button class="custom-coin-stepper-btn" onclick="addCustomCoins(10)">+10</button>
-                        <button class="custom-coin-stepper-btn" onclick="addCustomCoins(20)">+20</button>
-                        <button class="custom-coin-stepper-btn" onclick="addCustomCoins(50)">+50</button>
-                        <button class="custom-coin-stepper-btn" onclick="addCustomCoins(100)">+100</button>
-                    </div>
-
-                    <!-- Live price -->
-                    <div class="custom-coin-live-price">
-                        <span class="custom-coin-live-label">Total Harga</span>
-                        <span class="custom-coin-live-amount empty" id="customLivePrice">Masukkan jumlah koin</span>
-                        <span class="custom-coin-live-note" id="customLivePriceNote"></span>
-                    </div>
-
-                    <!-- Tombol beli -->
-                    <button
-                        class="coin-btn custom-buy-btn"
-                        id="customCoinBuyBtn"
-                        disabled
-                    >
-                        Beli Koin Custom
-                    </button>
-                </div>
-            </div>
-            <!-- ==== END CUSTOM COIN CARD ==== -->
+            <!-- END BARIS ATAS -->
 
         </div>
-        <!-- END BARIS ATAS -->
+    </section>
 
-    </div>
-</section>
-
-        <!-- ============================================
-             INFO SECTION
-             ============================================ -->
-        <!-- <div class="pricing-info">
-            <div class="info-card">
-                <div class="info-icon">💰</div>
-                <h4>Cara Kerja Koin</h4>
-                <p>Setiap kali pelanggan melakukan pemesanan melalui menu digital Anda, 1 koin akan terpakai untuk memproses transaksi tersebut.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-icon">🔄</div>
-                <h4>Koin Tidak Hangus</h4>
-                <p>Koin yang Anda beli akan tetap aktif sesuai masa berlaku paket. Tidak ada sistem hangus bulanan.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-icon">📊</div>
-                <h4>Monitoring Real-time</h4>
-                <p>Pantau sisa koin dan riwayat transaksi Anda secara real-time di dashboard OnMenu.</p>
-            </div>
-        </div>
-
-     ============================================
-             FAQ KOIN
-             ============================================ -->
-        <!-- <div class="coin-faq">
-            <h3 class="section-subtitle-2">Pertanyaan Seputar Koin</h3>
-            
-            <div class="faq-grid">
-                <div class="faq-coin-item">
-                    <h5>Apa itu sistem koin?</h5>
-                    <p>Koin adalah unit transaksi di OnMenu. 1 koin = 1 transaksi pemesanan dari pelanggan.</p>
-                </div>
-                
-                <div class="faq-coin-item">
-                    <h5>Apakah membership wajib?</h5>
-                    <p>Ya, membership diperlukan untuk mengakses semua fitur OnMenu. Koin hanya untuk transaksi pelanggan.</p>
-                </div>
-                
-                <div class="faq-coin-item">
-                    <h5>Bagaimana jika koin habis?</h5>
-                    <p>Anda akan mendapat notifikasi saat koin < 10. Beli paket koin baru untuk melanjutkan layanan.</p>
-                </div>
-                
-                <div class="faq-coin-item">
-                    <h5>Bisakah refund koin?</h5>
-                    <p>Koin yang sudah dibeli tidak bisa di-refund, tapi bisa digunakan kapan saja sesuai masa berlaku.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section> -->
 
     <!-- ============================================
          SECTION KONTAK
          ============================================ -->
     <section id="kontak" class="contact">
         <div class="container">
-            <!-- Header Section -->
             <div class="section-header">
                 <span class="section-tag">HUBUNGI KAMI</span>
                 <h2 class="section-title">Ada Pertanyaan?<br>Kami Siap Membantu</h2>
             </div>
 
             <div class="contact-grid">
-                <!-- Form Kontak -->
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
@@ -744,7 +653,6 @@
                         </button>
                     </form>
 
-                    <!-- Info Kontak -->
                     <div class="contact-info">
                         <div class="info-item">
                             <div class="info-icon">
@@ -755,7 +663,7 @@
                             </div>
                             <div>
                                 <div class="info-label">Email</div>
-                                <div class="info-value">hello@onmenu.id</div>
+                                <div class="info-value">onmenu.id@gmail.com</div>
                             </div>
                         </div>
                         <div class="info-item">
@@ -766,17 +674,15 @@
                             </div>
                             <div>
                                 <div class="info-label">Telepon</div>
-                                <div class="info-value">+62 812-3456-7890</div>
+                                <div class="info-value">+62 822-8888-1150</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimoni -->
                 <div class="testimonials">
                     <h3 class="testimonials-title">Apa Kata Mereka?</h3>
                     <div class="testimonials-list">
-                        <!-- Testimoni 1 -->
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <p class="testimonial-text">
@@ -792,7 +698,6 @@
                             </div>
                         </div>
 
-                        <!-- Testimoni 2 -->
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <p class="testimonial-text">
@@ -808,7 +713,6 @@
                             </div>
                         </div>
 
-                        <!-- Testimoni 3 -->
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <p class="testimonial-text">
@@ -831,65 +735,50 @@
             <div class="faq-section">
                 <h3 class="faq-title">Pertanyaan yang Sering Diajukan</h3>
                 <div class="faq-list">
-                    <!-- FAQ Item 1 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Apakah OnMenu gratis?</span>
-                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
                             <p>Ya! OnMenu menyediakan paket Starter yang gratis selamanya. Anda bisa membuat hingga 50 menu dengan fitur dasar yang cukup untuk memulai. Untuk fitur lebih lengkap, Anda bisa upgrade ke paket Professional atau Enterprise.</p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 2 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Bagaimana cara pelanggan melihat menu saya?</span>
-                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
                             <p>Pelanggan dapat mengakses menu digital Anda melalui QR code yang kami sediakan. Cukup cetak QR code dan tempel di meja atau kasir. Pelanggan tinggal scan menggunakan kamera smartphone mereka.</p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 3 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Apakah saya perlu punya website dulu?</span>
-                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
                             <p>Tidak perlu. OnMenu akan memberikan link khusus untuk menu digital Anda (misal: onmenu.id/namaresto). Anda juga bisa menggunakan custom domain sendiri jika berlangganan paket Professional atau Enterprise.</p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 4 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Berapa lama waktu setup OnMenu?</span>
-                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
                             <p>Hanya 5-10 menit! Setelah daftar, Anda langsung bisa mulai upload foto menu, mengisi harga, dan deskripsi. Menu Anda bisa langsung aktif dan siap di-scan oleh pelanggan.</p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 5 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Apakah OnMenu bisa untuk berbagai jenis usaha kuliner?</span>
-                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
                             <p>Ya, OnMenu cocok untuk semua jenis usaha kuliner: restoran, kafe, warung makan, food court, bakery, bubble tea, dan lainnya. Template desain kami dapat disesuaikan dengan konsep bisnis Anda.</p>
@@ -900,13 +789,13 @@
         </div>
     </section>
 
+
     <!-- ============================================
          FOOTER
          ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand -->
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
                         <div class="logo-icon">
@@ -921,7 +810,6 @@
                     <p class="footer-desc">Solusi menu digital untuk bisnis kuliner modern.</p>
                 </div>
 
-                <!-- Navigasi -->
                 <div class="footer-nav">
                     <h4>Navigasi</h4>
                     <ul>
@@ -932,7 +820,6 @@
                     </ul>
                 </div>
 
-                <!-- Sosial Media -->
                 <div class="footer-social">
                     <h4>Ikuti Kami</h4>
                     <div class="social-links">
@@ -957,7 +844,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2025 OnMenu. Semua hak dilindungi.</p>
                 <div class="footer-links">
@@ -969,9 +855,7 @@
         </div>
     </footer>
 
-    <!-- Link ke file JavaScript eksternal -->
     <script src="script.js"></script>
 
-    
 </body>
 </html>
