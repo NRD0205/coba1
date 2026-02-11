@@ -44,8 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Prevent body scroll when menu open
         if (navMenu.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('menu-open');       // ← TAMBAHAN FIX
         } else {
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');    // ← TAMBAHAN FIX
         }
     });
 
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');    // ← TAMBAHAN FIX
         });
     });
 
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');    // ← TAMBAHAN FIX
         }
     });
 
