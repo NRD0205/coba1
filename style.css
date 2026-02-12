@@ -4230,15 +4230,15 @@ body.menu-open {
 
 .partner-logo-card {
     flex-shrink: 0;
-    width: 200px;
-    height: 120px;
+     width: 260px;   /* ← Dari 200px */
+    height: 160px;  /* ← Dari 120px */
     background: var(--color-white);
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-gray-200);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1rem;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
     position: relative;
@@ -4299,13 +4299,13 @@ body.menu-open {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    filter: none;
+    opacity: 1;
     transition: all 0.3s ease;
 }
 
 .partner-logo-card:hover img {
-    filter: grayscale(0%);
+    filter: none;
     opacity: 1;
 }
 
@@ -4435,10 +4435,10 @@ body.menu-open {
     }
     
     .partner-logo-card {
-        width: 220px;
-        height: 140px;
-        padding: 2rem;
-    }
+    width: 280px;   /* ← Dari 220px */
+    height: 170px;  /* ← Dari 140px */
+    padding: 1.25rem;
+}
     
     .partner-logo-placeholder {
         font-size: 1.375rem;
@@ -4515,10 +4515,10 @@ body.menu-open {
     }
     
     .partner-logo-card {
-        width: 160px;
-        height: 100px;
-        padding: 1rem;
-    }
+    width: 200px;   /* ← Dari 160px */
+    height: 130px;  /* ← Dari 100px */
+    padding: 1rem;
+}
     
     .partner-logo-placeholder {
         font-size: 0.9375rem;
@@ -4718,5 +4718,286 @@ body.menu-open {
 @media (prefers-reduced-motion: reduce) {
     .partners-logos-track {
         animation-duration: 60s;
+    }
+}
+/* ============================================
+   PARTNERS SECTION - AUTO SCROLLING LOGOS
+   Tambahkan di bagian bawah style.css Anda
+   ============================================ */
+
+.partners {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--container-max);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-200), transparent);
+}
+
+/* Partners Title */
+.partners-title {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-gray-500);
+    margin-bottom: 3rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* Scrolling Wrapper dengan Fade Effect */
+.partners-logos-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    /* Fade effect kiri-kanan */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+/* Track yang bergerak */
+.partners-logos-track {
+    display: flex;
+    gap: 2.5rem;
+    width: max-content;
+    animation: scrollLeftContinuous 30s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Animasi scroll dari KANAN KE KIRI */
+@keyframes scrollLeftContinuous {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Logo Card Container */
+.partner-logo-card {
+    flex-shrink: 0;
+     width: 320px;   /* ← Dari 200px × 1.6 */
+    height: 192px;  /* ← Dari 120px × 1.6 */
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-logo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.partner-logo-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.2);
+    border-color: var(--color-primary);
+    z-index: 10;
+}
+
+.partner-logo-card:hover::before {
+    opacity: 1;
+}
+
+/* Logo Image Styling */
+.partner-logo-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.partner-logo-card:hover .partner-logo-img {
+    transform: scale(1.1);
+    filter: none; /* ← Tetap warna asli saat hover */
+}
+/* Logo Placeholder (jika pakai SVG/Text) */
+.partner-logo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-gray-700);
+    text-align: center;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.partner-logo-card:hover .partner-logo-placeholder {
+    color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.partner-logo-placeholder svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    stroke: currentColor;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (min-width: 640px) {
+    .partners-title {
+        font-size: 1.25rem;
+    }
+    
+    .partners-logos-track {
+        gap: 2rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .partners {
+        padding: 6rem 0;
+    }
+    
+    .partners-title {
+        font-size: 1.375rem;
+        margin-bottom: 4rem;
+    }
+    
+    .partners-logos-wrapper {
+        padding: 2.5rem 0;
+    }
+    
+    .partners-logos-track {
+        gap: 3rem;
+    }
+    
+   .partner-logo-card {
+    width: 352px;   /* ← Dari 220px × 1.6 */
+    height: 224px;  /* ← Dari 140px × 1.6 */
+    padding: 1.25rem;
+}
+    
+    .partner-logo-placeholder {
+        font-size: 1.375rem;
+    }
+    
+    .partner-logo-placeholder svg {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .partners {
+        padding: 3rem 0;
+    }
+    
+    .partners-title {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .partners-logos-track {
+        gap: 2rem;
+        animation-duration: 20s; /* Lebih cepat di mobile */
+    }
+    
+   .partner-logo-card {
+    width: 256px;   /* ← Dari 160px × 1.6 */
+    height: 160px;  /* ← Dari 100px × 1.6 */
+    padding: 1rem;
+}
+    
+    .partner-logo-placeholder {
+        font-size: 0.9375rem;
+    }
+    
+    .partner-logo-placeholder svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-logos-track {
+        gap: 1.5rem;
+        animation-duration: 15s;
+    }
+    
+   .partner-logo-card {
+    width: 224px;   /* ← Dari 140px × 1.6 */
+    height: 144px;  /* ← Dari 90px × 1.6 */
+    padding: 0.875rem;
+}
+    
+    .partner-logo-placeholder {
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .partners-logos-track {
+        animation-duration: 60s;
+    }
+    
+    .partner-logo-card,
+    .partner-logo-placeholder {
+        transition: none !important;
     }
 }
