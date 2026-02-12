@@ -3907,3 +3907,816 @@ body.menu-open {
     color: var(--color-gray-900) !important;
     display: block !important;
 }
+
+/* ============================================
+   MOCKUP MOBILE - POSISI BARU
+============================================ */
+
+/* Sembunyikan mockup yang lama di desktop */
+@media (min-width: 1024px) {
+    .hero-visual-mobile {
+        display: none !important;
+    }
+}
+
+/* Tampilkan mockup baru di mobile */
+@media (max-width: 1023px) {
+    .hero-visual {
+        display: none !important; /* sembunyikan yang lama */
+    }
+    
+    .hero-visual-mobile {
+        display: block !important;
+        margin: 2rem 0 !important; /* spacing atas bawah */
+        padding: 0 !important;
+    }
+    
+    .hero-visual-mobile .mockup-container {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+}
+/* ============================================
+   UBAH WARNA CUSTOM COIN CARD - DARI UNGU KE ORANGE
+============================================ */
+
+/* Custom Card - Border & Background */
+.coin-card.custom {
+    border-color: var(--color-primary) !important; /* ← Dari purple ke orange */
+    background: white !important; /* ← Orange gradient */
+}
+
+/* Icon SVG */
+.coin-card.custom .coin-icon svg {
+    stroke: var(--color-primary) !important; /* ← Orange */
+}
+
+.coin-card.custom .coin-icon {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05)) !important; /* ← Orange */
+}
+
+/* Badge */
+.coin-card.custom .coin-badge {
+    background: rgba(249, 115, 22, 0.1) !important; /* ← Orange */
+    color: var(--color-primary) !important;
+}
+
+/* Input Row - Background & Border */
+.custom-coin-input-row {
+    background: #fff7ed !important; /* ← Orange light background */
+    border: 1.5px solid rgba(249, 115, 22, 0.3) !important; /* ← Orange border */
+}
+
+.custom-coin-input-row:focus-within {
+    border-color: var(--color-primary) !important; /* ← Orange focus */
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12) !important; /* ← Orange shadow */
+}
+
+/* Input Text Color */
+.custom-coin-input-row input[type="number"] {
+    color: var(--color-primary) !important; /* ← Orange text */
+}
+
+.custom-coin-input-row input[type="number"]::placeholder {
+    color: rgba(249, 115, 22, 0.3) !important; /* ← Orange placeholder */
+}
+
+.custom-coin-input-suffix {
+    color: #ea580c !important; /* ← Orange dark */
+}
+
+/* Stepper Buttons */
+.custom-coin-stepper-btn {
+    border: 1.5px solid rgba(249, 115, 22, 0.3) !important; /* ← Orange border */
+    background: #fff7ed !important; /* ← Orange background */
+    color: var(--color-primary) !important; /* ← Orange text */
+}
+
+.custom-coin-stepper-btn:hover {
+    background: var(--color-primary) !important; /* ← Orange hover */
+    border-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+/* Live Price Display */
+.custom-coin-live-price {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5) !important; /* ← Orange gradient */
+}
+
+.custom-coin-live-label {
+    color: #ea580c !important; /* ← Orange label */
+}
+
+.custom-coin-live-amount {
+    color: var(--color-primary) !important; /* ← Orange amount */
+}
+
+.custom-coin-live-amount.empty {
+    color: rgba(249, 115, 22, 0.3) !important; /* ← Orange empty */
+}
+
+/* Buy Button Custom */
+.coin-btn.custom-buy-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important; /* ← Orange gradient */
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25) !important; /* ← Orange shadow */
+}
+
+.coin-btn.custom-buy-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--color-primary-dark), #c2410c) !important; /* ← Orange dark hover */
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35) !important;
+}
+
+/* Hover Effect */
+.coin-card.custom:hover {
+    border-color: var(--color-primary) !important; /* ← Orange hover */
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.12) !important; /* ← Orange shadow */
+}
+
+/* Preset Buttons */
+.coin-preset-btn {
+    border: 1.5px solid rgba(249, 115, 22, 0.3) !important; /* ← Orange border */
+    background: #fff7ed !important; /* ← Orange background */
+    color: var(--color-primary-dark) !important; /* ← Orange text */
+}
+
+.coin-preset-btn span {
+    color: var(--color-primary) !important; /* ← Orange span */
+}
+
+.coin-preset-btn:hover,
+.coin-preset-btn.active {
+    background: var(--color-primary) !important; /* ← Orange hover */
+    border-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.coin-preset-btn:hover span,
+.coin-preset-btn.active span {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* ============================================
+   PARTNERS SECTION - DISESUAIKAN DENGAN STYLE.CSS
+   Tambahkan kode ini ke bagian PALING BAWAH style.css Anda
+   ============================================ */
+
+/* ========================================
+   PARTNERS SECTION BASE
+   ======================================== */
+
+.partners {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--container-max);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-200), transparent);
+}
+
+.partners-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Badge */
+.partners-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.partners-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Title & Subtitle */
+.partners-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.partners-subtitle {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ========================================
+   PARTNERS STATS
+   ======================================== */
+
+.partners-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.partner-stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.3s ease;
+}
+
+.partner-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.partner-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.partner-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    font-weight: 600;
+}
+
+/* ========================================
+   LOGO SCROLLING ANIMATION
+   ======================================== */
+
+.partners-logos-wrapper {
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.partners-logos-wrapper::before,
+.partners-logos-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-logos-wrapper::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--color-white), transparent);
+}
+
+.partners-logos-wrapper::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--color-white), transparent);
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.partners-logos-track {
+    display: flex;
+    gap: 2rem;
+    animation: scrollLogos 40s linear infinite;
+    will-change: transform;
+}
+
+.partners-logos-track:hover {
+    animation-play-state: paused;
+}
+
+/* ========================================
+   LOGO CARDS
+   ======================================== */
+
+.partner-logo-card {
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-logo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+.partner-logo-card:hover::before {
+    opacity: 1;
+}
+
+/* Logo Placeholder */
+.partner-logo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-gray-700);
+    text-align: center;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.partner-logo-card:hover .partner-logo-placeholder {
+    color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.partner-logo-placeholder svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    stroke: currentColor;
+}
+
+/* Logo Images */
+.partner-logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.partner-logo-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ========================================
+   FEATURED TESTIMONIAL
+   ======================================== */
+
+.partners-testimonial {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-gray-100);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: var(--shadow-md);
+}
+
+.partners-testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 2rem;
+    font-size: 6rem;
+    color: rgba(249, 115, 22, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.testimonial-quote {
+    font-size: 1rem;
+    color: var(--color-gray-700);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.testimonial-author-details {
+    flex: 1;
+}
+
+.testimonial-author-name {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--color-gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author-role {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: auto;
+}
+
+.testimonial-rating svg {
+    width: 16px;
+    height: 16px;
+    fill: #fbbf24;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (min-width: 640px) {
+    .partners-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .partner-logo-card {
+        width: 180px;
+        height: 110px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .partners {
+        padding: 6rem 0;
+    }
+    
+    .partners-title {
+        font-size: 2.5rem;
+    }
+    
+    .partners-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .partner-stat-number {
+        font-size: 2.75rem;
+    }
+    
+    .partner-logo-card {
+        width: 220px;
+        height: 140px;
+        padding: 2rem;
+    }
+    
+    .partner-logo-placeholder {
+        font-size: 1.375rem;
+    }
+    
+    .partner-logo-placeholder svg {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .partners-testimonial {
+        padding: 3rem;
+    }
+    
+    .testimonial-quote {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+    
+    .testimonial-author-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-author-name {
+        font-size: 1.125rem;
+    }
+    
+    .testimonial-author-role {
+        font-size: 0.9375rem;
+    }
+    
+    .testimonial-rating svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .partners-logos-wrapper::before,
+    .partners-logos-wrapper::after {
+        width: 150px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .partners {
+        padding: 3rem 0;
+    }
+    
+    .partners-title {
+        font-size: 1.5rem;
+    }
+    
+    .partners-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .partners-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .partner-stat {
+        padding: 1.25rem;
+    }
+    
+    .partner-stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .partner-logo-card {
+        width: 160px;
+        height: 100px;
+        padding: 1rem;
+    }
+    
+    .partner-logo-placeholder {
+        font-size: 0.9375rem;
+    }
+    
+    .partner-logo-placeholder svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .partners-testimonial {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.9375rem;
+    }
+    
+    .testimonial-author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .partners-logos-wrapper::before,
+    .partners-logos-wrapper::after {
+        width: 50px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .partners-logos-track {
+        animation: none !important;
+    }
+    
+    .partner-logo-card,
+    .partner-stat,
+    .partner-logo-placeholder {
+        transition: none !important;
+    }
+}   
+/* ============================================
+   PARTNERS SECTION - AUTO SCROLLING ANIMATION
+   ============================================ */
+
+.partners {
+    padding: 60px 0;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.partners-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.partners-logos-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+.partners-logos-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    /* Animasi berjalan terus menerus dari kanan ke kiri */
+    animation: scrollLeftContinuous 30s linear infinite;
+    will-change: transform;
+}
+
+/* Keyframe animasi - KANAN KE KIRI */
+@keyframes scrollLeftContinuous {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.partner-logo-card {
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover efek - TANPA menghentikan animasi */
+.partner-logo-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+.partner-logo-placeholder {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    line-height: 1.4;
+    padding: 10px;
+}
+
+.partner-logo-placeholder svg {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 8px;
+    opacity: 0.7;
+    display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .partners {
+        padding: 40px 0;
+    }
+    
+    .partners-logos-track {
+        gap: 30px;
+        /* Lebih cepat di mobile */
+        animation-duration: 20s;
+    }
+    
+    .partner-logo-card {
+        width: 160px;
+        height: 100px;
+    }
+    
+    .partner-logo-placeholder {
+        font-size: 12px;
+    }
+    
+    .partner-logo-placeholder svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-logos-track {
+        gap: 20px;
+        animation-duration: 15s;
+    }
+    
+    .partner-logo-card {
+        width: 140px;
+        height: 90px;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATION
+   ============================================ */
+
+/* Smooth animation dengan GPU acceleration */
+.partners-logos-track {
+    backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Reduce motion untuk accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .partners-logos-track {
+        animation-duration: 60s;
+    }
+}

@@ -175,56 +175,645 @@
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; }
         }
+
+        /* ============================================
+           ANIMASI SEMUA CARD BERGERAK SENDIRI-SENDIRI
+           ============================================ */
+        
+        @media (min-width: 1024px) {
+            /* KEYFRAMES - 4 Jenis Animasi Berbeda */
+            @keyframes floatSlow {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+            }
+            
+            @keyframes floatMedium {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-25px); }
+            }
+            
+            @keyframes floatFast {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+            }
+            
+            @keyframes floatRotate {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                25% { transform: translateY(-10px) rotate(-1deg); }
+                75% { transform: translateY(-20px) rotate(1deg); }
+            }
+            
+            /* MOCKUP BROWSER - Gerak Pelan */
+            .mockup-browser {
+                animation: floatSlow 4s ease-in-out infinite;
+                animation-delay: 0.5s;
+            }
+            
+            /* MENU ITEMS - Gerak Independent */
+            .menu-item:nth-child(1) {
+                animation: floatFast 3.5s ease-in-out infinite;
+                animation-delay: 0s;
+            }
+            
+            .menu-item:nth-child(2) {
+                animation: floatMedium 4s ease-in-out infinite;
+                animation-delay: 1s;
+            }
+            
+            /* FLOATING CARDS - Styling */
+            .floating-card {
+                display: block !important;
+                position: absolute;
+                background: rgba(255, 255, 255, 0.98);
+                border-radius: 16px;
+                box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.25);
+                padding: 1.5rem;
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                z-index: 10;
+            }
+            
+            /* CARD STATS - Kiri dengan Rotasi */
+            .card-stats {
+                left: -50px;
+                top: 15%;
+                width: 180px;
+                animation: floatRotate 3s ease-in-out infinite;
+                animation-delay: 0s;
+            }
+            
+            /* CARD ORDERS - Kanan */
+            .card-orders {
+                right: -40px;
+                bottom: 15%;
+                width: 200px;
+                animation: floatMedium 3.5s ease-in-out infinite;
+                animation-delay: 1.8s;
+            }
+            
+            /* HOVER - Pause Animasi */
+            .mockup-browser:hover,
+            .menu-item:hover,
+            .floating-card:hover {
+                animation-play-state: paused;
+            }
+            
+            .floating-card:hover {
+                transform: translateY(-8px) scale(1.03) !important;
+                box-shadow: 0 30px 70px -12px rgba(0, 0, 0, 0.35);
+            }
+            
+            /* CARD ICONS */
+            .card-icon,
+            .card-icon-small {
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(249, 115, 22, 0.05));
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease;
+            }
+            
+            .card-icon-small {
+                width: 44px;
+                height: 44px;
+            }
+            
+            .floating-card:hover .card-icon,
+            .floating-card:hover .card-icon-small {
+                transform: scale(1.15) rotate(10deg);
+            }
+            
+            /* LABELS & VALUES */
+            .card-label,
+            .card-label-small {
+                font-size: 0.8125rem;
+                color: #6b7280;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+            }
+            
+            .card-value,
+            .card-value-small {
+                font-size: 2rem;
+                font-weight: 800;
+                color: #f97316;
+                line-height: 1;
+            }
+            
+            .card-value-small {
+                font-size: 1.75rem;
+            }
+            
+            /* LIVE DOT - Pulse */
+            @keyframes pulse {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.7; transform: scale(1.15); }
+            }
+            
+            .live-dot {
+                animation: pulse 2s ease-in-out infinite;
+            }
+            
+            /* MOCKUP DOTS - Float Kecil */
+            @keyframes dotFloat {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-3px); }
+            }
+            
+            .mockup-dots span {
+                animation: dotFloat 2s ease-in-out infinite;
+            }
+            
+            .mockup-dots span:nth-child(1) { animation-delay: 0s; }
+            .mockup-dots span:nth-child(2) { animation-delay: 0.3s; }
+            .mockup-dots span:nth-child(3) { animation-delay: 0.6s; }
+        }
+        
+        /* MOBILE - No Animation */
+        @media (max-width: 1023px) {
+            .floating-card { display: none !important; }
+            .mockup-browser, .menu-item { animation: none !important; }
+        }
+        
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; }
+        }
+
+        /* ============================================
+           PARTNERS SECTION STYLES
+           ============================================ */
+        
+        .partners {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partners::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1400px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        }
+
+        .partners-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .partners-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 50px;
+            color: #f97316;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .partners-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .partners-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .partners-subtitle {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Stats Grid */
+        .partners-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .partner-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .partner-stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+
+        .partner-stat-number {
+            font-size: 2.75rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .partner-stat-label {
+            font-size: 0.9375rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        /* Logo Scrolling Animation */
+        .partners-logos-wrapper {
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+            padding: 2.5rem 0;
+        }
+
+        .partners-logos-wrapper::before,
+        .partners-logos-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .partners-logos-wrapper::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff, transparent);
+        }
+
+        .partners-logos-wrapper::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff, transparent);
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .partners-logos-track {
+            display: flex;
+            gap: 2.5rem;
+            animation: scrollLogos 40s linear infinite;
+            will-change: transform;
+        }
+
+        .partners-logos-track:hover {
+            animation-play-state: paused;
+        }
+
+        .partner-logo-card {
+            flex-shrink: 0;
+            width: 220px;
+            height: 140px;
+            background: white;
+            border-radius: 20px;
+            border: 1.5px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-logo-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .partner-logo-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(249, 115, 22, 0.15);
+            border-color: #f97316;
+        }
+
+        .partner-logo-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-logo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.375rem;
+            color: #374151;
+            text-align: center;
+            line-height: 1.3;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .partner-logo-card:hover .partner-logo-placeholder {
+            color: #f97316;
+            transform: scale(1.05);
+        }
+
+        .partner-logo-placeholder svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.75rem;
+            stroke: currentColor;
+        }
+
+        /* Featured Testimonial */
+        .partners-testimonial {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #ffffff, #fafafa);
+            border-radius: 24px;
+            border: 1.5px solid #e5e7eb;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .partners-testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 2.5rem;
+            font-size: 8rem;
+            color: rgba(249, 115, 22, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .testimonial-quote {
+            font-size: 1.25rem;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author-info {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .testimonial-author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .testimonial-author-details {
+            flex: 1;
+        }
+
+        .testimonial-author-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: #111827;
+            margin-bottom: 0.375rem;
+        }
+
+        .testimonial-author-role {
+            font-size: 0.9375rem;
+            color: #6b7280;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-left: auto;
+        }
+
+        .testimonial-rating svg {
+            width: 20px;
+            height: 20px;
+            fill: #fbbf24;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .partners {
+                padding: 60px 0;
+            }
+
+            .partners-title {
+                font-size: 1.875rem;
+            }
+
+            .partners-subtitle {
+                font-size: 1rem;
+            }
+
+            .partners-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .partner-stat-number {
+                font-size: 2.25rem;
+            }
+
+            .partner-logo-card {
+                width: 180px;
+                height: 120px;
+                padding: 1.5rem;
+            }
+
+            .partner-logo-placeholder {
+                font-size: 1.125rem;
+            }
+
+            .partners-testimonial {
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-quote {
+                font-size: 1.0625rem;
+            }
+
+            .partners-logos-wrapper::before,
+            .partners-logos-wrapper::after {
+                width: 60px;
+            }
+        }
+        /* ============================================
+   PARTNERS SECTION - SCROLLING ANIMATION
+   ============================================ */
+
+.partners-logos-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.partners-logos-track {
+    display: flex;
+    gap: 40px;
+    animation: scroll-left 40s linear infinite;
+    width: max-content;
+}
+
+/* Animasi scroll dari kanan ke kiri */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover (opsional) */
+.partners-logos-wrapper:hover .partners-logos-track {
+    animation-play-state: paused;
+}
+
+.partner-logo-card {
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo-placeholder {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.partner-logo-placeholder svg {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 8px;
+    opacity: 0.6;
+}
+
+/* Responsive - lebih cepat di mobile */
+@media (max-width: 768px) {
+    .partners-logos-track {
+        gap: 30px;
+        animation-duration: 30s;
+    }
+    
+    .partner-logo-card {
+        width: 160px;
+        height: 100px;
+    }
+}
     </style>
 </head>
 
+
 <body>
+    
+
 
     <!-- ============================================
          NAVBAR
          ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-
-            <!-- Logo -->
-             
             <a href="logo.jpg.png" class="logo">
                 <div class="logo-icon">
-                        <img src="logo.jpg.png" alt="OnMenu Logo" width="22" height="22">
+                    <img src="logo.jpg.png" alt="OnMenu Logo" width="22" height="22">
                 </div>
-                        <span>OnMenu</span>
+                <span>OnMenu</span>
             </a>
-            <!-- Nav Menu (Desktop: horizontal pill | Mobile: fullscreen overlay) -->
             <ul class="nav-menu">
                 <li><a href="#beranda" class="nav-link active">Beranda</a></li>
                 <li><a href="#tentang" class="nav-link">Tentang</a></li>
                 <li><a href="#paket" class="nav-link">Paket</a></li>
                 <li><a href="#kontak" class="nav-link">Kontak</a></li>
-
-                <!-- ✅ TAMBAHAN: Tombol Login & Sign Up khusus mobile -->
-                <!-- Hanya tampil di dalam overlay mobile, tersembunyi di desktop via CSS -->
                 <div class="mobile-auth">
                     <a href="#" class="btn-login-mobile">Login</a>
                     <a href="#" class="btn-signup-mobile">Mulai Gratis →</a>
                 </div>
             </ul>
-
-            <!-- Auth Buttons Desktop -->
             <div class="nav-auth">
                 <a href="#" class="btn-login">Login</a>
                 <a href="#" class="btn-signup">Sign Up</a>
             </div>
-
-            <!-- Hamburger Button -->
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
         </div>
     </nav>
-
 
     <!-- ============================================
          HERO SECTION
@@ -236,17 +825,59 @@
                     <span class="badge-dot"></span>
                     Platform Menu Digital Terpercaya
                 </div>
-
                 <h1 class="hero-title">
                     Solusi pemesanan menu makanan & minuman via
                     <span class="text-orange">whatsapp</span>
                 </h1>
-
                 <p class="hero-subtitle">
                     Ubah menu tradisional Anda menjadi menu digital yang menarik dan mudah diakses. 
                     Hemat biaya cetak, update kapan saja, dan tingkatkan penjualan hingga 3x lipat.
                 </p>
-
+                <div class="hero-visual-mobile">
+                    <div class="mockup-container">
+                        <div class="mockup-browser">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="live-badge">
+                                    <span class="live-dot"></span>
+                                    Live Menu
+                                </div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="menu-item">
+                                    <div class="menu-image">
+                                        <img src="download.jpg" alt="Nasi Goreng Special">
+                                    </div>
+                                    <div class="menu-info">
+                                        <h4>Nasi Goreng Special</h4>
+                                        <p class="menu-price">Rp 25.000</p>
+                                        <div class="menu-rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(120)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-image menu-image-2">
+                                        <img src="images.jpg" alt="Mie Goreng Seafood">
+                                    </div>
+                                    <div class="menu-info">
+                                        <h4>Mie Goreng Seafood</h4>
+                                        <p class="menu-price">Rp 30.000</p>
+                                        <div class="menu-rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(95)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="hero-buttons">
                     <a href="#" class="btn-primary">
                         Coba Gratis Sekarang
@@ -263,8 +894,7 @@
                         Lihat Demo
                     </a>
                 </div>
-
-               <div class="hero-stats">
+                <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">1.500+</div>
                         <div class="stat-label">Restoran Bergabung</div>
@@ -281,54 +911,49 @@
                     </div>
                 </div>
             </div>
-
-            <!-- MOCKUP DENGAN SEMUA ANIMASI -->
             <div class="hero-visual">
                 <div class="mockup-container">
-                    <!-- MOCKUP BROWSER -->
-                <div class="mockup-browser">
+                    <div class="mockup-browser">
                         <div class="mockup-header">
-                <div class="mockup-dots">
-                         <span></span>
-                        <span></span>
-                        <span></span>
-                </div>
-                    <div class="live-badge">
-                         <span class="live-dot"></span>
-                                 Live Menu
-                    </div>
-                    </div>
-            <div class="mockup-content">
-                 <div class="menu-item">
-                         <div class="menu-image">
-                                <img src="download.jpg" alt="Nasi Goreng Special">
+                            <div class="mockup-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="live-badge">
+                                <span class="live-dot"></span>
+                                Live Menu
+                            </div>
                         </div>
-                    <div class="menu-info">
-                             <h4>Nasi Goreng Special</h4>
-                             <p class="menu-price">Rp 25.000</p>
-                        <div class="menu-rating">
-                            <span class="stars">★★★★★</span>
-                         <span class="review-count">(120)</span>
+                        <div class="mockup-content">
+                            <div class="menu-item">
+                                <div class="menu-image">
+                                    <img src="download.jpg" alt="Nasi Goreng Special">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Nasi Goreng Special</h4>
+                                    <p class="menu-price">Rp 25.000</p>
+                                    <div class="menu-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="review-count">(120)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-image menu-image-2">
+                                    <img src="images.jpg" alt="Mie Goreng Seafood">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Mie Goreng Seafood</h4>
+                                    <p class="menu-price">Rp 30.000</p>
+                                    <div class="menu-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="review-count">(95)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-             </div>
-        <div class="menu-item">
-                <div class="menu-image menu-image-2">
-                        <img src="images.jpg" alt="Mie Goreng Seafood">
-                     </div>
-                      <div class="menu-info">
-                             <h4>Mie Goreng Seafood</h4>
-                            <p class="menu-price">Rp 30.000</p>
-                    <div class="menu-rating">
-                            <span class="stars">★★★★★</span>
-                             <span class="review-count">(95)</span>
-                         </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
-
-                    <!-- FLOATING CARD 1 - KIRI -->
                     <div class="floating-card card-stats">
                         <div class="card-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5">
@@ -338,8 +963,6 @@
                         <div class="card-label">Peningkatan</div>
                         <div class="card-value">+340%</div>
                     </div>
-
-                    <!-- FLOATING CARD 2 - KANAN -->
                     <div class="floating-card card-orders">
                         <div class="card-icon-small">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5">
@@ -356,6 +979,183 @@
         </div>
     </section>
 
+    <!-- ============================================
+         PARTNERS SECTION - SIMPLIFIED
+         ============================================ -->
+    <section class="partners">
+        <div class="container">
+            <!-- Header Text -->
+            <p class="partners-title">Trusted by fast-growing companies around the world</p>
+
+            <!-- Scrolling Logo Strip -->
+            <div class="partners-logos-wrapper">
+                <div class="partners-logos-track">
+                    <!-- First Set -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Warung<br>Matcha
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                                <line x1="16" y1="8" x2="2" y2="22"></line>
+                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                            </svg>
+                            Kedai<br>Kopi 88
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Restoran<br>Padang
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                            Bakso<br>Mercon
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                            Ayam<br>Geprek
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Cafe<br>Nusantara
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="2" x2="12" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            Soto<br>Betawi
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            Bubble<br>Tea Co
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless scroll -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Warung<br>Matcha
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                                <line x1="16" y1="8" x2="2" y2="22"></line>
+                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                            </svg>
+                            Kedai<br>Kopi 88
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Restoran<br>Padang
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                            Bakso<br>Mercon
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                            Ayam<br>Geprek
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Cafe<br>Nusantara
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="2" x2="12" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            Soto<br>Betawi
+                        </div>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            Bubble<br>Tea Co
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================
          SECTION TENTANG / FITUR
@@ -459,6 +1259,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- ============================================
