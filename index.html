@@ -344,436 +344,115 @@
             * { animation: none !important; }
         }
 
+
+
         /* ============================================
-           PARTNERS SECTION STYLES
+           PARTNERS SECTION - LOGO ONLY (NO CARD)
            ============================================ */
         
-        .partners {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
+         .partners {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02));
             position: relative;
             overflow: hidden;
-        }
-
-        .partners::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1400px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
-        }
-
-        .partners-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .partners-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05));
-            border: 1px solid rgba(249, 115, 22, 0.2);
-            border-radius: 50px;
-            color: #f97316;
-            font-size: 0.875rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.25rem;
-            text-transform: uppercase;
-        }
-
-        .partners-badge svg {
-            width: 16px;
-            height: 16px;
         }
 
         .partners-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #111827;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .partners-subtitle {
-            font-size: 1.125rem;
-            color: #6b7280;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* Stats Grid */
-        .partners-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-
-        .partner-stat {
             text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 3rem;
         }
 
-        .partner-stat:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-            border-color: rgba(249, 115, 22, 0.3);
-        }
-
-        .partner-stat-number {
-            font-size: 2.75rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #f97316, #fb923c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 0.75rem;
-        }
-
-        .partner-stat-label {
-            font-size: 0.9375rem;
-            color: #6b7280;
-            font-weight: 600;
-        }
-
-        /* Logo Scrolling Animation */
+        /* Scrolling Wrapper */
         .partners-logos-wrapper {
-            margin-top: 4rem;
-            position: relative;
             overflow: hidden;
-            padding: 2.5rem 0;
-        }
-
-        .partners-logos-wrapper::before,
-        .partners-logos-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 150px;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .partners-logos-wrapper::before {
-            left: 0;
-            background: linear-gradient(90deg, #ffffff, transparent);
-        }
-
-        .partners-logos-wrapper::after {
-            right: 0;
-            background: linear-gradient(270deg, #ffffff, transparent);
-        }
-
-        @keyframes scrollLogos {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
         }
 
         .partners-logos-track {
             display: flex;
-            gap: 2.5rem;
-            animation: scrollLogos 40s linear infinite;
+            gap: 60px; /* Jarak antar logo */
+            width: max-content;
+            animation: scrollLogos 25s linear infinite;
             will-change: transform;
         }
 
-        .partners-logos-track:hover {
-            animation-play-state: paused;
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
+        /* LOGO CONTAINER - TANPA CARD STYLE */
         .partner-logo-card {
             flex-shrink: 0;
-            width: 220px;
-            height: 140px;
-            background: white;
-            border-radius: 20px;
-            border: 1.5px solid #e5e7eb;
+            width: 180px;  /* Ukuran container */
+            height: 110px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .partner-logo-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            /* HAPUS SEMUA STYLE CARD */
+            background: transparent !important; /* Paksa transparan */
+            border: none !important; /* Hapus border */
+            border-radius: 0 !important; /* Hapus radius */
+            box-shadow: none !important; /* Hapus shadow */
+            padding: 0;
+            transition: transform 0.3s ease;
         }
 
         .partner-logo-card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 16px 32px rgba(249, 115, 22, 0.15);
-            border-color: #f97316;
+            transform: scale(1.1);
         }
 
-        .partner-logo-card:hover::before {
-            opacity: 1;
-        }
-
-        .partner-logo-placeholder {
+        /* GAMBAR LOGO - DIPERBESAR */
+        .partner-logo-img {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.375rem;
-            color: #374151;
-            text-align: center;
-            line-height: 1.3;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
+            object-fit: contain;
+            filter: none;
+            opacity: 1;
+            transition: transform 0.3s ease;
         }
 
-        .partner-logo-card:hover .partner-logo-placeholder {
-            color: #f97316;
-            transform: scale(1.05);
-        }
-
-        .partner-logo-placeholder svg {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 0.75rem;
-            stroke: currentColor;
-        }
-
-        /* Featured Testimonial */
-        .partners-testimonial {
-            margin-top: 4rem;
-            padding: 3rem;
-            background: linear-gradient(135deg, #ffffff, #fafafa);
-            border-radius: 24px;
-            border: 1.5px solid #e5e7eb;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .partners-testimonial::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 2.5rem;
-            font-size: 8rem;
-            color: rgba(249, 115, 22, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-            font-weight: 700;
-        }
-
-        .testimonial-quote {
-            font-size: 1.25rem;
-            color: #374151;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author-info {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .testimonial-author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f97316, #fb923c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-        }
-
-        .testimonial-author-details {
-            flex: 1;
-        }
-
-        .testimonial-author-name {
-            font-weight: 700;
-            font-size: 1.125rem;
-            color: #111827;
-            margin-bottom: 0.375rem;
-        }
-
-        .testimonial-author-role {
-            font-size: 0.9375rem;
-            color: #6b7280;
-        }
-
-        .testimonial-rating {
-            display: flex;
-            gap: 0.25rem;
-            margin-left: auto;
-        }
-
-        .testimonial-rating svg {
-            width: 20px;
-            height: 20px;
-            fill: #fbbf24;
-        }
-
-        /* Mobile Responsive */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .partners {
-                padding: 60px 0;
+                padding: 40px 0;
             }
-
+            
             .partners-title {
-                font-size: 1.875rem;
+                font-size: 1.25rem;
+                margin-bottom: 2rem;
             }
-
-            .partners-subtitle {
-                font-size: 1rem;
+            
+            .partners-logos-track {
+                gap: 30px;
+                animation-duration: 20s;
             }
-
-            .partners-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .partner-stat-number {
-                font-size: 2.25rem;
-            }
-
+            
             .partner-logo-card {
-                width: 180px;
-                height: 120px;
-                padding: 1.5rem;
-            }
-
-            .partner-logo-placeholder {
-                font-size: 1.125rem;
-            }
-
-            .partners-testimonial {
-                padding: 2rem 1.5rem;
-            }
-
-            .testimonial-quote {
-                font-size: 1.0625rem;
-            }
-
-            .partners-logos-wrapper::before,
-            .partners-logos-wrapper::after {
-                width: 60px;
+                width: 120px;
+                height: 75px;
             }
         }
-        /* ============================================
-   PARTNERS SECTION - SCROLLING ANIMATION
-   ============================================ */
 
-.partners-logos-wrapper {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    padding: 20px 0;
-}
-
-.partners-logos-track {
-    display: flex;
-    gap: 40px;
-    animation: scroll-left 40s linear infinite;
-    width: max-content;
-}
-
-/* Animasi scroll dari kanan ke kiri */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pause on hover (opsional) */
-.partners-logos-wrapper:hover .partners-logos-track {
-    animation-play-state: paused;
-}
-
-.partner-logo-card {
-    flex-shrink: 0;
-    width: 200px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-logo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.partner-logo-placeholder {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    color: #64748b;
-    line-height: 1.4;
-}
-
-.partner-logo-placeholder svg {
-    width: 32px;
-    height: 32px;
-    margin: 0 auto 8px;
-    opacity: 0.6;
-}
-
-/* Responsive - lebih cepat di mobile */
-@media (max-width: 768px) {
-    .partners-logos-track {
-        gap: 30px;
-        animation-duration: 30s;
-    }
-    
-    .partner-logo-card {
-        width: 160px;
-        height: 100px;
-    }
-}
+        @media (min-width: 1024px) {
+            .partners-title {
+                font-size: 2.5rem;
+            }
+            
+            .partners-logos-track {
+                gap: 80px;
+            }
+            
+            .partner-logo-card {
+                width: 220px;
+                height: 135px;
+            }
+        }
     </style>
 </head>
 
@@ -850,7 +529,7 @@
                             <div class="mockup-content">
                                 <div class="menu-item">
                                     <div class="menu-image">
-                                        <img src="download.jpg" alt="Nasi Goreng Special">
+                                        <img src="nasi.jpg" alt="Nasi Goreng Special">
                                     </div>
                                     <div class="menu-info">
                                         <h4>Nasi Goreng Special</h4>
@@ -863,7 +542,7 @@
                                 </div>
                                 <div class="menu-item">
                                     <div class="menu-image menu-image-2">
-                                        <img src="images.jpg" alt="Mie Goreng Seafood">
+                                        <img src="mi.jpg" alt="Mie Goreng Seafood">
                                     </div>
                                     <div class="menu-info">
                                         <h4>Mie Goreng Seafood</h4>
@@ -928,7 +607,7 @@
                         <div class="mockup-content">
                             <div class="menu-item">
                                 <div class="menu-image">
-                                    <img src="download.jpg" alt="Nasi Goreng Special">
+                                    <img src="nasi.jpg" alt="Nasi Goreng Special">
                                 </div>
                                 <div class="menu-info">
                                     <h4>Nasi Goreng Special</h4>
@@ -941,7 +620,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-image menu-image-2">
-                                    <img src="images.jpg" alt="Mie Goreng Seafood">
+                                    <img src="mi.jpg" alt="Mie Goreng Seafood">
                                 </div>
                                 <div class="menu-info">
                                     <h4>Mie Goreng Seafood</h4>
@@ -979,58 +658,58 @@
         </div>
     </section>
 
-    <!-- ============================================
-         PARTNERS SECTION - SIMPLIFIED
-         ============================================ -->
-    <!-- ============================================
-     PARTNERS SECTION - WITH REAL IMAGES
+   <!-- ============================================
+     PARTNERS SECTION - LOGO ONLY
      ============================================ -->
 <section class="partners">
     <div class="container">
         <!-- Header Text -->
-        <p class="partners-title">Dipercaya oleh bisnis kuliner</p>
+        <h2 class="partners-title">Dipercaya oleh bisnis kuliner</h2>
+        <p class="partners-subtitle">
+            Digunakan oleh restoran, kafe, dan UMKM untuk menyajikan menu digital.
+        </p>
 
         <!-- Scrolling Logo Strip -->
         <div class="partners-logos-wrapper">
             <div class="partners-logos-track">
-                <!-- First Set - GAMBAR ASLI -->
+                <!-- First Set -->
                 <div class="partner-logo-card">
-                    <img src="Gacoan.png" alt="Warung Matcha" class="partner-logo-img">
+                    <img src="Tosernyah.png" alt="Gacoan" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="KFC.png" alt="Kedai Kopi 88" class="partner-logo-img">
+                    <img src="KFC-removebg-preview.png" alt="KFC" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="Sambak.jpg" alt="Restoran Padang" class="partner-logo-img">
+                    <img src="Sambak-removebg-preview.png" alt="Sambal Bakar" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="Oseng.jpg" alt="Bakso Mercon" class="partner-logo-img">
+                    <img src="Oseng-removebg-preview.png" alt="Oseng Mercon" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="MCD.png" alt="Ayam Geprek" class="partner-logo-img">
+                    <img src="MCD-removebg-preview.png" alt="McDonalds" class="partner-logo-img">
                 </div>
 
-                <!-- Duplicate Set untuk Seamless Loop -->
+                <!-- Duplicate Set -->
                 <div class="partner-logo-card">
-                    <img src="Gacoan.png" alt="Warung Matcha" class="partner-logo-img">
+                    <img src="Tosernyah.png" alt="Gacoan" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="KFC.png" alt="Kedai Kopi 88" class="partner-logo-img">
+                    <img src="KFC-removebg-preview.png" alt="KFC" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="Sambak.jpg" alt="Restoran Padang" class="partner-logo-img">
+                    <img src="Sambak-removebg-preview.png" alt="Sambal Bakar" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="Oseng.jpg" alt="Bakso Mercon" class="partner-logo-img">
+                    <img src="Oseng-removebg-preview.png" alt="Oseng Mercon" class="partner-logo-img">
                 </div>
                 <div class="partner-logo-card">
-                    <img src="MCD.png" alt="Ayam Geprek" class="partner-logo-img">
+                    <img src="MCD-removebg-preview.png" alt="McDonalds" class="partner-logo-img">
                 </div>
-               
             </div>
         </div>
     </div>
 </section>
+
 
     <!-- ============================================
          SECTION TENTANG / FITUR
@@ -1303,31 +982,33 @@
 
             <div class="contact-grid">
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="whatsapp">Nomor WhatsApp</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Ceritakan kebutuhan Anda..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">
-                            Kirim Pesan
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </button>
-                    </form>
+                    <!-- ============================================
+     FORM KONTAK - KIRIM KE WHATSAPP
+     ============================================ -->
+<form class="contact-form" id="contactForm" onsubmit="sendToWhatsApp(event)">
+    <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+    </div>
+    <div class="form-group">
+        <label for="whatsapp">Nomor WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 08123456789" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="4" placeholder="Ceritakan kebutuhan Anda..." required></textarea>
+    </div>
+    <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="btn-text">Kirim via WhatsApp</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </button>
+</form>
 
                     <div class="contact-info">
                         <div class="info-item">
@@ -1475,12 +1156,8 @@
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
                         <div class="logo-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="4" y1="6" x2="20" y2="6"></line>
-                                <line x1="4" y1="12" x2="20" y2="12"></line>
-                                <line x1="4" y1="18" x2="20" y2="18"></line>
-                            </svg>
-                        </div>
+                    <img src="logo.jpg.png" alt="OnMenu Logo" width="22" height="22">
+                </div>
                         <span>OnMenu</span>
                     </a>
                     <p class="footer-desc">Solusi menu digital untuk bisnis kuliner modern.</p>
@@ -1532,6 +1209,84 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+/**
+ * KIRIM FORM KE WHATSAPP
+ * Ganti nomor di bawah dengan nomor WhatsApp Anda
+ */
+function sendToWhatsApp(e) {
+    e.preventDefault();
+    
+    // ⚠️ GANTI NOMOR INI DENGAN NOMOR WHATSAPP ANDA
+    // Format: 6282288881150 (tanpa +, tanpa spasi, tanpa strip)
+    const MY_WHATSAPP_NUMBER = "6282288881150";
+    
+    // Ambil nilai dari form
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Format pesan yang akan dikirim
+    const text = `*Pesan Baru dari OnMenu Website*%0A%0A` +
+                 `*Nama:* ${name}%0A` +
+                 `*Email:* ${email}%0A` +
+                 `*No. WhatsApp:* ${whatsapp}%0A%0A` +
+                 `*Pesan:*%0A${message}%0A%0A` +
+                 `---%0A` +
+                 `Dikirim dari: ${window.location.href}`;
+    
+    // Buat URL WhatsApp
+    const whatsappURL = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${text}`;
+    
+    // Ubah tombol jadi loading state
+    const btn = document.getElementById('submitBtn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `
+        <svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20"></circle>
+        </svg>
+        Membuka WhatsApp...
+    `;
+    btn.disabled = true;
+    
+    // Buka WhatsApp dalam tab baru
+    setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form dan tombol
+        document.getElementById('contactForm').reset();
+        btn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Terkirim! Kirim Lagi?
+        `;
+        btn.style.background = '#22c55e';
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 3000);
+    }, 800);
+}
+
+// Tambahkan animasi spin jika belum ada
+if (!document.getElementById('spin-style')) {
+    const style = document.createElement('style');
+    style.id = 'spin-style';
+    style.textContent = `
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+    `;
+    document.head.appendChild(style);
+}
+</script>
 
 </body>
 </html>

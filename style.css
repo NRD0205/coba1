@@ -4056,678 +4056,12 @@ body.menu-open {
 }
 
 /* ============================================
-   PARTNERS SECTION - DISESUAIKAN DENGAN STYLE.CSS
-   Tambahkan kode ini ke bagian PALING BAWAH style.css Anda
-   ============================================ */
-
-/* ========================================
-   PARTNERS SECTION BASE
-   ======================================== */
-
-.partners {
-    padding: 4rem 0;
-    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.partners::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: var(--container-max);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-gray-200), transparent);
-}
-
-.partners-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-/* Badge */
-.partners-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.2);
-    border-radius: var(--radius-full);
-    color: var(--color-primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.partners-badge svg {
-    width: 16px;
-    height: 16px;
-}
-
-/* Title & Subtitle */
-.partners-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-gray-900);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-.partners-subtitle {
-    font-size: 1rem;
-    color: var(--color-gray-500);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* ========================================
-   PARTNERS STATS
-   ======================================== */
-
-.partners-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.partner-stat {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--color-white);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-gray-100);
-    transition: all 0.3s ease;
-}
-
-.partner-stat:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(249, 115, 22, 0.3);
-}
-
-.partner-stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.partner-stat-label {
-    font-size: 0.875rem;
-    color: var(--color-gray-500);
-    font-weight: 600;
-}
-
-/* ========================================
-   LOGO SCROLLING ANIMATION
-   ======================================== */
-
-.partners-logos-wrapper {
-    margin-top: 3rem;
-    position: relative;
-    overflow: hidden;
-    padding: 2rem 0;
-}
-
-.partners-logos-wrapper::before,
-.partners-logos-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.partners-logos-wrapper::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--color-white), transparent);
-}
-
-.partners-logos-wrapper::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--color-white), transparent);
-}
-
-@keyframes scrollLogos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.partners-logos-track {
-    display: flex;
-    gap: 2rem;
-    animation: scrollLogos 40s linear infinite;
-    will-change: transform;
-}
-
-.partners-logos-track:hover {
-    animation-play-state: paused;
-}
-
-/* ========================================
-   LOGO CARDS
-   ======================================== */
-
-.partner-logo-card {
-    flex-shrink: 0;
-     width: 260px;   /* ← Dari 200px */
-    height: 160px;  /* ← Dari 120px */
-    background: var(--color-white);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-gray-200);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-}
-
-.partner-logo-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.partner-logo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-primary);
-}
-
-.partner-logo-card:hover::before {
-    opacity: 1;
-}
-
-/* Logo Placeholder */
-.partner-logo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--color-gray-700);
-    text-align: center;
-    line-height: 1.3;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.partner-logo-card:hover .partner-logo-placeholder {
-    color: var(--color-primary);
-    transform: scale(1.05);
-}
-
-.partner-logo-placeholder svg {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.5rem;
-    stroke: currentColor;
-}
-
-/* Logo Images */
-.partner-logo-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: none;
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-.partner-logo-card:hover img {
-    filter: none;
-    opacity: 1;
-}
-
-/* ========================================
-   FEATURED TESTIMONIAL
-   ======================================== */
-
-.partners-testimonial {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--color-white);
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--color-gray-100);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    box-shadow: var(--shadow-md);
-}
-
-.partners-testimonial::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    left: 2rem;
-    font-size: 6rem;
-    color: rgba(249, 115, 22, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
-    font-weight: 700;
-}
-
-.testimonial-quote {
-    font-size: 1rem;
-    color: var(--color-gray-700);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
-}
-
-.testimonial-author-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.testimonial-author-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 1.125rem;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-}
-
-.testimonial-author-details {
-    flex: 1;
-}
-
-.testimonial-author-name {
-    font-weight: 700;
-    font-size: 0.9375rem;
-    color: var(--color-gray-900);
-    margin-bottom: 0.25rem;
-}
-
-.testimonial-author-role {
-    font-size: 0.8125rem;
-    color: var(--color-gray-500);
-}
-
-.testimonial-rating {
-    display: flex;
-    gap: 0.25rem;
-    margin-left: auto;
-}
-
-.testimonial-rating svg {
-    width: 16px;
-    height: 16px;
-    fill: #fbbf24;
-}
-
-/* ========================================
-   RESPONSIVE - TABLET
-   ======================================== */
-
-@media (min-width: 640px) {
-    .partners-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    .partner-logo-card {
-        width: 180px;
-        height: 110px;
-    }
-}
-
-/* ========================================
-   RESPONSIVE - DESKTOP
-   ======================================== */
-
-@media (min-width: 1024px) {
-    .partners {
-        padding: 6rem 0;
-    }
-    
-    .partners-title {
-        font-size: 2.5rem;
-    }
-    
-    .partners-subtitle {
-        font-size: 1.125rem;
-    }
-    
-    .partner-stat-number {
-        font-size: 2.75rem;
-    }
-    
-    .partner-logo-card {
-    width: 280px;   /* ← Dari 220px */
-    height: 170px;  /* ← Dari 140px */
-    padding: 1.25rem;
-}
-    
-    .partner-logo-placeholder {
-        font-size: 1.375rem;
-    }
-    
-    .partner-logo-placeholder svg {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 0.75rem;
-    }
-    
-    .partners-testimonial {
-        padding: 3rem;
-    }
-    
-    .testimonial-quote {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-    }
-    
-    .testimonial-author-avatar {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .testimonial-author-name {
-        font-size: 1.125rem;
-    }
-    
-    .testimonial-author-role {
-        font-size: 0.9375rem;
-    }
-    
-    .testimonial-rating svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .partners-logos-wrapper::before,
-    .partners-logos-wrapper::after {
-        width: 150px;
-    }
-}
-
-/* ========================================
-   RESPONSIVE - MOBILE
-   ======================================== */
-
-@media (max-width: 768px) {
-    .partners {
-        padding: 3rem 0;
-    }
-    
-    .partners-title {
-        font-size: 1.5rem;
-    }
-    
-    .partners-subtitle {
-        font-size: 0.875rem;
-    }
-    
-    .partners-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .partner-stat {
-        padding: 1.25rem;
-    }
-    
-    .partner-stat-number {
-        font-size: 1.75rem;
-    }
-    
-    .partner-logo-card {
-    width: 200px;   /* ← Dari 160px */
-    height: 130px;  /* ← Dari 100px */
-    padding: 1rem;
-}
-    
-    .partner-logo-placeholder {
-        font-size: 0.9375rem;
-    }
-    
-    .partner-logo-placeholder svg {
-        width: 32px;
-        height: 32px;
-    }
-    
-    .partners-testimonial {
-        padding: 1.5rem;
-    }
-    
-    .testimonial-quote {
-        font-size: 0.9375rem;
-    }
-    
-    .testimonial-author-avatar {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .partners-logos-wrapper::before,
-    .partners-logos-wrapper::after {
-        width: 50px;
-    }
-}
-
-/* ========================================
-   ACCESSIBILITY - REDUCED MOTION
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-    .partners-logos-track {
-        animation: none !important;
-    }
-    
-    .partner-logo-card,
-    .partner-stat,
-    .partner-logo-placeholder {
-        transition: none !important;
-    }
-}   
-/* ============================================
-   PARTNERS SECTION - AUTO SCROLLING ANIMATION
-   ============================================ */
-
-.partners {
-    padding: 60px 0;
-    background: #fafafa;
-    overflow: hidden;
-}
-
-.partners-title {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    color: #64748b;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.partners-logos-wrapper {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    padding: 20px 0;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 10%,
-        black 90%,
-        transparent
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 10%,
-        black 90%,
-        transparent
-    );
-}
-
-.partners-logos-track {
-    display: flex;
-    gap: 40px;
-    width: max-content;
-    /* Animasi berjalan terus menerus dari kanan ke kiri */
-    animation: scrollLeftContinuous 30s linear infinite;
-    will-change: transform;
-}
-
-/* Keyframe animasi - KANAN KE KIRI */
-@keyframes scrollLeftContinuous {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.partner-logo-card {
-    flex-shrink: 0;
-    width: 200px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover efek - TANPA menghentikan animasi */
-.partner-logo-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    z-index: 10;
-}
-
-.partner-logo-placeholder {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    color: #64748b;
-    line-height: 1.4;
-    padding: 10px;
-}
-
-.partner-logo-placeholder svg {
-    width: 36px;
-    height: 36px;
-    margin: 0 auto 8px;
-    opacity: 0.7;
-    display: block;
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 768px) {
-    .partners {
-        padding: 40px 0;
-    }
-    
-    .partners-logos-track {
-        gap: 30px;
-        /* Lebih cepat di mobile */
-        animation-duration: 20s;
-    }
-    
-    .partner-logo-card {
-        width: 160px;
-        height: 100px;
-    }
-    
-    .partner-logo-placeholder {
-        font-size: 12px;
-    }
-    
-    .partner-logo-placeholder svg {
-        width: 28px;
-        height: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .partners-logos-track {
-        gap: 20px;
-        animation-duration: 15s;
-    }
-    
-    .partner-logo-card {
-        width: 140px;
-        height: 90px;
-    }
-}
-
-/* ============================================
-   PERFORMANCE OPTIMIZATION
-   ============================================ */
-
-/* Smooth animation dengan GPU acceleration */
-.partners-logos-track {
-    backface-visibility: hidden;
-    perspective: 1000px;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Reduce motion untuk accessibility */
-@media (prefers-reduced-motion: reduce) {
-    .partners-logos-track {
-        animation-duration: 60s;
-    }
-}
-/* ============================================
-   PARTNERS SECTION - AUTO SCROLLING LOGOS
-   Tambahkan di bagian bawah style.css Anda
+   PARTNERS SECTION - LOGO ONLY (NO CARD)
    ============================================ */
 
 .partners {
     padding: 4rem 0;
-    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    background: rgba(249, 115, 22, 0.05);
     position: relative;
     overflow: hidden;
 }
@@ -4747,12 +4081,12 @@ body.menu-open {
 /* Partners Title */
 .partners-title {
     text-align: center;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-gray-500);
-    margin-bottom: 3rem;
-    text-transform: none;
-    letter-spacing: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin: 0;                /* HAPUS SEMUA margin default */
+    margin-bottom: 12px;      /* jarak kecil ke subheader */
+    line-height: 1.25;
 }
 
 /* Scrolling Wrapper dengan Fade Effect */
@@ -4761,7 +4095,6 @@ body.menu-open {
     position: relative;
     width: 100%;
     padding: 2rem 0;
-    /* Fade effect kiri-kanan */
     -webkit-mask-image: linear-gradient(
         to right,
         transparent,
@@ -4781,7 +4114,7 @@ body.menu-open {
 /* Track yang bergerak */
 .partners-logos-track {
     display: flex;
-    gap: 2.5rem;
+    gap: 4rem; /* Jarak antar logo diperbesar */
     width: max-content;
     animation: scrollLeftContinuous 30s linear infinite;
     will-change: transform;
@@ -4800,104 +4133,44 @@ body.menu-open {
     }
 }
 
-/* Logo Card Container */
+/* Logo Card - HANYA UNTUK WRAPPER, TANPA STYLE CARD */
 .partner-logo-card {
     flex-shrink: 0;
-     width: 320px;   /* ← Dari 200px × 1.6 */
-    height: 192px;  /* ← Dari 120px × 1.6 */
-    background: var(--color-white);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-gray-200);
+    width: 200px;  /* Ukuran container logo */
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.partner-logo-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    background: transparent; /* Hapus background putih */
+    border: none; /* Hapus border */
+    box-shadow: none; /* Hapus shadow */
+    padding: 0;
+    transition: transform 0.3s ease;
 }
 
 .partner-logo-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.2);
-    border-color: var(--color-primary);
-    z-index: 10;
+    transform: scale(1.15); /* Efek zoom saat hover */
 }
 
-.partner-logo-card:hover::before {
-    opacity: 1;
-}
-
-/* Logo Image Styling */
+/* Logo Image - DIPERBESAR DAN LEBIH JELAS */
 .partner-logo-img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     filter: none;
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: transform 0.3s ease;
+    /* Tambahan untuk gambar lebih jelas */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .partner-logo-card:hover .partner-logo-img {
     transform: scale(1.1);
-    filter: none; /* ← Tetap warna asli saat hover */
-}
-/* Logo Placeholder (jika pakai SVG/Text) */
-.partner-logo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--color-gray-700);
-    text-align: center;
-    line-height: 1.3;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.partner-logo-card:hover .partner-logo-placeholder {
-    color: var(--color-primary);
-    transform: scale(1.05);
-}
-
-.partner-logo-placeholder svg {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.5rem;
-    stroke: currentColor;
 }
 
 /* ========================================
-   RESPONSIVE - TABLET
-   ======================================== */
-
-@media (min-width: 640px) {
-    .partners-title {
-        font-size: 1.25rem;
-    }
-    
-    .partners-logos-track {
-        gap: 2rem;
-    }
-}
-
-/* ========================================
-   RESPONSIVE - DESKTOP
+   RESPONSIVE - DESKTOP (≥1024px)
    ======================================== */
 
 @media (min-width: 1024px) {
@@ -4906,47 +4179,52 @@ body.menu-open {
     }
     
     .partners-title {
-        font-size: 1.375rem;
+        font-size: 2.5rem;
         margin-bottom: 4rem;
     }
     
-    .partners-logos-wrapper {
-        padding: 2.5rem 0;
+    .partners-logos-track {
+        gap: 6rem; /* Jarak lebih lebar di desktop */
+    }
+    
+    /* Logo DIPERBESAR untuk desktop */
+    .partner-logo-card {
+        width: 280px;   /* Lebih besar */
+        height: 160px;  /* Lebih besar */
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (640px - 1023px)
+   ======================================== */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .partners-title {
+        font-size: 1.5rem;
     }
     
     .partners-logos-track {
         gap: 3rem;
     }
     
-   .partner-logo-card {
-    width: 352px;   /* ← Dari 220px × 1.6 */
-    height: 224px;  /* ← Dari 140px × 1.6 */
-    padding: 1.25rem;
-}
-    
-    .partner-logo-placeholder {
-        font-size: 1.375rem;
-    }
-    
-    .partner-logo-placeholder svg {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 0.75rem;
+    .partner-logo-card {
+        width: 180px;
+        height: 100px;
     }
 }
 
 /* ========================================
-   RESPONSIVE - MOBILE
+   RESPONSIVE - MOBILE (<640px)
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 639px) {
     .partners {
         padding: 3rem 0;
     }
     
     .partners-title {
-        font-size: 1rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
     }
     
     .partners-logos-track {
@@ -4954,21 +4232,16 @@ body.menu-open {
         animation-duration: 20s; /* Lebih cepat di mobile */
     }
     
-   .partner-logo-card {
-    width: 256px;   /* ← Dari 160px × 1.6 */
-    height: 160px;  /* ← Dari 100px × 1.6 */
-    padding: 1rem;
-}
-    
-    .partner-logo-placeholder {
-        font-size: 0.9375rem;
-    }
-    
-    .partner-logo-placeholder svg {
-        width: 32px;
-        height: 32px;
+    /* Logo size untuk mobile */
+    .partner-logo-card {
+        width: 140px;
+        height: 80px;
     }
 }
+
+/* ========================================
+   MOBILE KECIL (<480px)
+   ======================================== */
 
 @media (max-width: 480px) {
     .partners-logos-track {
@@ -4976,14 +4249,9 @@ body.menu-open {
         animation-duration: 15s;
     }
     
-   .partner-logo-card {
-    width: 224px;   /* ← Dari 140px × 1.6 */
-    height: 144px;  /* ← Dari 90px × 1.6 */
-    padding: 0.875rem;
-}
-    
-    .partner-logo-placeholder {
-        font-size: 0.875rem;
+    .partner-logo-card {
+        width: 120px;
+        height: 70px;
     }
 }
 
@@ -4996,8 +4264,124 @@ body.menu-open {
         animation-duration: 60s;
     }
     
-    .partner-logo-card,
-    .partner-logo-placeholder {
+    .partner-logo-card {
         transition: none !important;
+    }
+}
+/* ============================================
+   PARTNERS SECTION - LOGO ONLY OVERRIDE
+   ============================================ */
+
+/* Hapus semua style card dengan !important */
+.partner-logo-card {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Perbesar gambar */
+.partner-logo-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+.partners-subtitle {
+    margin: 0;                /* HAPUS margin default */
+    margin-bottom: 48px;      /* jarak ke logo */
+    font-size: 1rem;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.6;
+}
+/* ============================================
+   FIX: PARTNERS SECTION - KURANGI JARAK HEADER-SUBHEADER
+   Tempel kode ini di PALING BAWAH file style.css Anda
+   ============================================ */
+
+/* Kurangi jarak antara title dan subtitle */
+.partners-title {
+    margin-bottom: 12px !important;  /* Jarak ke subtitle - SUDAH PAS */
+}
+
+.partners-subtitle {
+    margin: 0 !important;
+    margin-bottom: 32px !important;  /* Jarak ke logo - DIKURANGI dari 48px */
+    font-size: 1rem;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE - Sesuaikan untuk Mobile
+   ======================================== */
+
+@media (max-width: 768px) {
+    .partners-title {
+        margin-bottom: 8px !important;  /* Lebih rapat di mobile */
+    }
+    
+    .partners-subtitle {
+        margin-bottom: 24px !important;  /* Lebih rapat di mobile */
+        font-size: 0.875rem;
+    }
+}
+/* ============================================
+   FIX: MENU PRICE RATA KIRI DI MOBILE
+   Tempel kode ini di PALING BAWAH file style.css
+   ============================================ */
+
+/* Reset alignment untuk menu info di mobile */
+.menu-info {
+    text-align: left !important;
+}
+
+.menu-info h4 {
+    text-align: left !important;
+}
+
+.menu-price {
+    text-align: left !important;
+}
+
+.menu-rating {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+/* Pastikan menu item align left di semua ukuran */
+.menu-item {
+    text-align: left !important;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE SPECIFIC
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .menu-info {
+        text-align: left !important;
+        width: 100% !important;
+    }
+    
+    .menu-info h4 {
+        text-align: left !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .menu-price {
+        text-align: left !important;
+        display: block !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .menu-rating {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 0.5rem !important;
+        text-align: left !important;
     }
 }
