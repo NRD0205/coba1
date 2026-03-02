@@ -309,14 +309,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Harga membership
         const prices = {
             monthly: {
-                amount: '99.000',
+                amount: '20.000',
                 period: '/bulan',
                 note: 'Tanpa komitmen jangka panjang'
             },
             yearly: {
-                amount: '960.000',
+                amount: '220.000',
                 period: '/tahun',
-                note: 'Setara Rp 80.000/bulan'
+                note: 'Setara Rp 30.000/bulan'
             }
         };
         

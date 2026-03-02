@@ -680,6 +680,72 @@
         filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
     }
 }
+
+/* ============================================
+   MOBILE AUTH BUTTONS FIX
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-auth {
+        display: none !important; /* Sembunyikan button desktop */
+    }
+    
+    .mobile-auth {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-login-mobile {
+        display: block !important;
+        width: 100%;
+        padding: 12px 24px;
+        background: transparent;
+        color: #f97316;
+        border: 2px solid #f97316;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-login-mobile:hover {
+        background: #f97316;
+        color: white;
+    }
+    
+    /* Hamburger menu active state */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 999;
+    }
+}
+
+/* Desktop - hide mobile buttons */
+@media (min-width: 769px) {
+    .mobile-auth {
+        display: none !important;
+    }
+    
+    .nav-auth {
+        display: flex !important;
+        gap: 12px;
+    }
+}
+    
     </style>
 </head>
 
@@ -772,21 +838,21 @@
             </div>
             
             <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">1.500+</div>
-                    <div class="stat-label">Restoran Bergabung</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Menu Dibuat</div>
-                </div> 
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9/5</div>
-                    <div class="stat-label">Rating Pengguna</div>
-                </div>
-            </div>
+    <div class="stat-item">
+        <div class="stat-number" id="stat-restaurants">4</div>
+        <div class="stat-label">Restoran Bergabung</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+        <div class="stat-number" id="stat-menus">100</div>
+        <div class="stat-label">Menu Dibuat</div>
+    </div> 
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+        <div class="stat-number" id="stat-rating">4.9/5</div>
+        <div class="stat-label">Rating Pengguna</div>
+    </div>
+</div>
         </div>
         
         <!-- HERO VISUAL - MOCKUP HP (DESKTOP ONLY) -->
@@ -816,7 +882,7 @@
                         </svg>
                     </div>
                     <div class="card-label-small">Pesanan Hari Ini</div>
-                    <div class="card-value-small">+247</div>
+                    <div class="card-value-small">0</div>
                 </div>
             </div>
         </div>
@@ -1209,14 +1275,14 @@
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <p class="testimonial-text">
-                                "OnMenu benar-benar membantu meningkatkan penjualan di kedai matcha kami. 
+                                "OnMenu benar-benar membantu meningkatkan penjualan onlien di toko kami. 
                                 Pelanggan jadi lebih tertarik dengan tampilan menu yang modern. Recommended banget!"
                             </p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">R</div>
                                 <div class="author-info">
-                                    <div class="author-name">Rudi Hartono</div>
-                                    <div class="author-role">Warung Matcha, Sudirman, Jakarta</div>
+                                    <div class="author-name">Nur Hadi Indra</div>
+                                    <div class="author-role">toko cemilan, Sudirman, Jakarta</div>
                                 </div>
                             </div>
                         </div>
@@ -1264,7 +1330,7 @@
                             <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
-                            <p>Ya! OnMenu menyediakan paket Starter yang gratis selamanya. Anda bisa membuat hingga 50 menu dengan fitur dasar yang cukup untuk memulai. Untuk fitur lebih lengkap, Anda bisa upgrade ke paket Professional atau Enterprise.</p>
+                            <p>Ya! OnMenu menyediakan 100 pemesanan pertama gratis</p>
                         </div>
                     </div>
 
@@ -1284,7 +1350,7 @@
                             <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
-                            <p>Tidak perlu. OnMenu akan memberikan link khusus untuk menu digital Anda (misal: onmenu.id/namaresto). Anda juga bisa menggunakan custom domain sendiri jika berlangganan paket Professional atau Enterprise.</p>
+                            <p>Tidak perlu. OnMenu akan memberikan link khusus untuk menu digital Anda (misal: onmenu.id/namaresto). Anda juga bisa menggunakan custom domain sendiri</p>
                         </div>
                     </div>
 
@@ -1342,18 +1408,14 @@
                 <div class="footer-social">
                     <h4>Ikuti Kami</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram">
+                        <a href="https://www.instagram.com/onmenu.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
-                        <a href="#" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                        </a>
+                        
                         <a href="#" aria-label="WhatsApp">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -1451,7 +1513,25 @@ if (!document.getElementById('spin-style')) {
         }
     `;
     document.head.appendChild(style);
+    
 }
+
+fetch('http://localhost:8000/api/statistics/formatted')
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('stat-restaurants').textContent = data.data.total_restaurants;
+      document.getElementById('stat-menus').textContent = data.data.total_menus;
+      document.getElementById('stat-rating').textContent = data.data.user_rating;
+    }
+  })
+  .catch(error => {
+    console.error('Error loading statistics:', error);
+    // Fallback ke nilai default jika API error
+    document.getElementById('stat-restaurants').textContent = '4';
+    document.getElementById('stat-menus').textContent = '100+';
+    document.getElementById('stat-rating').textContent = '4.9/5';
+  });
 </script>
 
 </body>
